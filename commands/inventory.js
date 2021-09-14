@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js")
 exports.execute = async (client, message, args) => {
 
   const embed = new MessageEmbed()
-    .setAuthor(`Inventory of ${message.author.tag}`, message.guild.iconURL)
+    .setAuthor(`Тоглогчын цунхэн дотор ${message.author.tag}`, message.guild.iconURL)
     .setColor("RANDOM")
     .setThumbnail()
     .setTimestamp();
@@ -12,7 +12,7 @@ const arrayToObject = x.reduce((itemsobj, x) => {
     itemsobj[x.name] = (itemsobj[x.name] || 0) + 1;
     return itemsobj;
 }, {});
-const result = Object.keys(arrayToObject).map(k => embed.addField(`Name: ${k}`,`Quantity: **${arrayToObject[k]}**`, false));
+const result = Object.keys(arrayToObject).map(k => embed.addField(`Барааны нэр: ${k}`,`ширхэг: **${arrayToObject[k]}**`, false));
   
  
   return message.channel.send(embed);
