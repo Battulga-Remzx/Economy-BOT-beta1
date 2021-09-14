@@ -1,60 +1,25 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
-const ms = require("parse-ms");
+const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
-  if(!message.content.startsWith('m!'))return;  
-
-let user = message.mentions.members.first()
-let targetuser = await db.fetch(`money_${message.guild.id}_${user.id}`)
-let author = await db.fetch(`rob_${message.guild.id}_${user.id}`)
-let author2 = await db.fetch(`money_${message.guild.id}_${user.id}`)
-
-let timeout = 600000;
-
-if (author !== null && timeout - (Date.now() - author) > 0) {
-    let time = ms(timeout - (Date.now() - author));
-
-    let timeEmbed = new Discord.RichEmbed()
-    .setColor("#FFFFFF")
-    .setDescription(`<:Cross:618736602901905418> You have already robbed someone\n\nTry again in ${time.minutes}m ${time.seconds}s `);
-    message.channel.send(timeEmbed)
-  } else {
-
-let moneyEmbed = new Discord.RichEmbed()
-  .setColor("#FFFFFF")
-  .setDescription(`<:Cross:618736602901905418> You need atleast 200 coins in your wallet to rob someone`);
-
-if (author2 < 200) {
-    return message.channel.send(moneyEmbed)
-
-}
-let moneyEmbed2 = new Discord.RichEmbed()
-  .setColor("#FFFFFF")
-  .setDescription(`<:Cross:618736602901905418> ${user.user.username} does not have anything you can rob`);
-if (targetuser < 0) {
-    return message.channel.send(moneyEmbed2)
+exports.execute = async (client, message, args) => {
+    if (!client.config.admins.includes(message.author.id)) return; // return if author isn't bot owner
+    let user = message.mentions.users.first();
+    if (!user) return message.channel.send("Please specify a user!");
+    let amount = args[1];
+    if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
+    let data = client.eco.addMoney(user.id, parseInt(amount));
+    const embed = new MessageEmbed()
+        .setTitle(`Robber!`)
+        .addField(`User`, `<@${data.user}>`)
+        .addField(`Balance Rob`, `${data.amount} 💸`)
+        .addField(`Total Amount`, data.after)
+        .setColor("RANDOM")
+        .setThumbnail(user.displayAvatarURL)
+        .setTimestamp();
+    return message.channel.send(embed);
 }
 
-
-
-let vip = await db.fetch(`bronze_${user.id}`)
-if(vip === true) random = Math.floor(Math.random() * 200) + 1;
-if (vip === null) random = Math.floor(Math.random() * 100) + 1;
-
-let embed = new Discord.RichEmbed()
-.setDescription(`<:Check:618736570337591296> You robbed ${user} and got away with ${random} coins`)
-.setColor("#FFFFFF")
-message.channel.send(embed)
-
-db.subtract(`money_${message.guild.id}_${user.id}`, random)
-db.add(`money_${message.guild.id}_${user.id}`, random)
-db.set(`rob_${message.guild.id}_${user.id}`, Date.now())
-  
-};
-}
-
-module.exports.help = {
-  name:"rob",
-  aliases: [""]
+exports.help = {
+    name: "rob",
+    aliases: ["rob"],
+    usage: `rob @user <amount>`
 }
