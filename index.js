@@ -18,6 +18,12 @@ client.shop = {
   },
   IponeX: {
     cost: 9000
+  },
+  Prius20: {
+    cost: 100000
+  },
+  IceCream: {
+    cost:5
   }
 };
 const fs = require("fs");
