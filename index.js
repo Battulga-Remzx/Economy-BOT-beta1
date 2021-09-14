@@ -10,19 +10,19 @@ client.shop = {
   laptop: {
     cost: 10000
   },
-  samsungS9: {
+  samsungs9: {
     cost: 8000
   },
   pc: {
     cost:10000
   },
-  IponeX: {
+  iphonex: {
     cost: 9000
   },
-  Prius20: {
+  prius20: {
     cost: 100000
   },
-  IceCream: {
+  icecreame: {
     cost:5
   }
 };
