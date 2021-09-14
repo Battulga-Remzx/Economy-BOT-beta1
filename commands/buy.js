@@ -2,13 +2,13 @@ const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
   let userBalance = client.eco.fetchMoney(message.author.id);
-  if (userBalance.amount < 1) return message.channel.send("Looks like you are poor.");
+  if (userBalance.amount < 1) return message.channel.send("Чи яг л ядуу хүн шиг харагдаж байна.");
   let item = args[0];
-  if (!item) return message.channel.send("What are you trying to buy?");
+  if (!item) return message.channel.send("Чи юу худалдаж авах вэ?");
   let hasItem = client.shop[item.toLowerCase()];
-  if (!hasItem || hasItem == undefined) return message.reply("That item doesnt exists lol");
+  if (!hasItem || hasItem == undefined) return message.reply("Ийм бараа байхгүй байна");
   let isBalanceEnough = (userBalance.amount >= hasItem.cost);
-  if (!isBalanceEnough) return message.reply("Your balance is insufficient. You need :dollar: "+hasItem.cost+" to buy this item.");
+  if (!isBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasItem.cost+"-аар энэ барааг авч болно.");
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
   
   let itemStruct = {
