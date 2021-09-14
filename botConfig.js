@@ -1,6 +1,6 @@
-module.exports = {
-    token: "ODg2ODI3MzUxNTE2NzgyNjMy.YT7QVQ.4p9GfTXHLUQVhchkxdZqeSnXVFw",
-    prefix: "*",
+module.exports = {}
+    token: ".YUAYEw.NfyMcF2GfRYC0aNQMT1M2vSL12k",
+    prefix: "~",
     admins: [
         "715428540954181714"
 ],
