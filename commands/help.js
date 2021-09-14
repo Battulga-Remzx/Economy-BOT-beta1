@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
     const embed = new MessageEmbed()
         .setAuthor("Коммандууд")
-        .setTitle("Мэдэхгүй зүйл гарвал  холбогдоно уу!")
+        .setTitle("Мэдэхгүй зүйл гарвал #ЭНД ДАРЧ холбогдоно уу!")
         .setURL("https://www.facebook.com/profile.php?id=100038870322966")
         .setDescription(`Нийт комманд: ${client.commands.size}`)
         .setColor("BLURPLE")
