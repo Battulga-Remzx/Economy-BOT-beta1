@@ -6,12 +6,12 @@ exports.execute = async (client, message, args) => {
     if (!user) return message.channel.send("Please specify a user!");
     let amount = args[1];
     if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
-    let data = client.eco.addMoney(user.id, parseInt(amount));
+    let data = client.eco.robMoney(user.id, parseInt(amount));
     const embed = new MessageEmbed()
         .setTitle(`Robber!`)
         .addField(`User`, `<@${data.user}>`)
         .addField(`Balance Rob`, `${data.amount} 💸`)
-        .addField(`Total Amount`, data.after)
+        .addField(`Total amount`, data.after)
         .setColor("RANDOM")
         .setThumbnail(user.displayAvatarURL)
         .setTimestamp();
