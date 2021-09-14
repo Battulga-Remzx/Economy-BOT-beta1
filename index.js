@@ -8,13 +8,16 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
   laptop: {
-    cost: 2000
+    cost: 10000
   },
-  mobile: {
-    cost: 1000
+  samsungS9: {
+    cost: 8000
   },
   pc: {
-    cost: 3000
+    cost:10000
+  },
+  IponeX: {
+    cost: 9000
   }
 };
 const fs = require("fs");
