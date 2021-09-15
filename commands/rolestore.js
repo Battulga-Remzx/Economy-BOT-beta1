@@ -1,11 +1,11 @@
 const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
-  let role = Object.keys(client.role);
+  let role = Object.keys(client.buyrole);
   let content = "";
   
   for (var i in role) {
-    content += `${role[i]} - :dollar: ${client.role[role[i]].cost}\n`
+    content += `${role[i]} - :dollar: ${client.buyrole[role[i]].cost}\n`
   }
 
 let embed = new MessageEmbed()
