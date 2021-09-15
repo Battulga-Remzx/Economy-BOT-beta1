@@ -8,20 +8,21 @@ exports.execute = async (client, message, args) => {
   let hasItem = client.shop[item.toLowerCase()];
   if (!hasItem || hasItem == undefined) return message.reply("Ийм бараа байхгүй байна");
   let isBalanceEnough = (userBalance.amount >= hasItem.cost);
-  if (!isBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasItem.cost+"-аар энэ барааг авч болно.");
+  if (!isBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasItem.cost+" төгрөгөөр энэ барааг авч болно.");
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
   
   let itemStruct = {
     name: item.toLowerCase(),
     prize: hasItem.cost
-  };
+  }
+  
   
   client.db.push(`items_${message.author.id}`, itemStruct);
-  return message.channel.send(`You purchased **${item}** for **:dollar: ${hasItem.cost}**.`);
-};
+  return message.channel.send(`Худалдан авалт **${item}** амжилттай **:dollar: ${hasItem.cost}**  төгрөг болло.`);
+}
 
 exports.help = {
-  name: "buy",
-  aliases: [],
-  usage: `buy <item>`
+    name: "buy",
+    aliases: [],
+    usage: `buy <item>`
 };

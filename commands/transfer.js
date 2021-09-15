@@ -8,6 +8,7 @@ exports.execute = async (client, message, args) => {
   await client.eco.transfer(message.author.id, member.id, amount) 
   return message.channel.send(`Шилжүүлэгэ амжилттай боллоо 💸**${amount}** ыг ** ${member.user.tag}**-руу.`)
 }
+
 exports.help = {
   name: "transfer",
   aliases: ['give', 'share'],

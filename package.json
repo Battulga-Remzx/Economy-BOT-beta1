@@ -1,13 +1,13 @@
 {
   "name": "EconomyBot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Economy bot created with quick.eco package in discord.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "author": "Remzx official",
-  "license": "Remzx official",
+  "license": "MIT",
   "keywords": [
     "discord",
     "Easy",

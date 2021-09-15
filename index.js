@@ -6,26 +6,45 @@ client.db = Eco.db; // quick.db
 client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+//Дэлгүүр
 client.shop = {
+  icecream: {
+    cost: 3000
+  },
   laptop: {
-    cost: 10000
+    cost: 1000000
   },
   samsungs9: {
-    cost: 8000
+    cost: 800000
   },
   pc: {
-    cost:10000
+    cost:600000
   },
   iphonex: {
-    cost: 9000
+    cost: 1500000
   },
   prius20: {
-    cost: 100000
+    cost: 3000000
   },
-  icecreame: {
-    cost:5
+  ferrari: {
+    cost:20000000
   }
 };
+//Role Худалдаа
+client.buyrole = {
+  vip: {
+    cost:500000
+    },
+  changerole: {
+    cost:50000
+    },
+  customrole: {
+    cost:200000
+    },
+  publicrole: {
+    cost:500000
+    }
+  };
 const fs = require("fs");
 
 fs.readdir("./events/", (err, files) => {
