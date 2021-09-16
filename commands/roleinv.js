@@ -7,18 +7,18 @@ exports.execute = async (client, message, args) => {
     .setThumbnail()
     .setTimestamp();
   const x = client.db.get(`role_${message.author.id}`);
-if(!x) { return message.channel.send(`ямар ч бараа байхгүй байна`); }
-const arrayToObject = x.reduce((itemsobj, x) => {
-    itemsobj[x.name] = (itemsobj[x.name] || 0) + 1;
-    return itemsobj;
+if(!x) { return message.channel.send(`ямар ч Role аваагүй байна`); }
+const arrayToObject = x.reduce((roleobj, x) => {
+    roleobj[x.name] = (roleobj[x.name] || 0) + 1;
+    return roleobj;
 }, {});
-const result = Object.keys(arrayToObject).map(k => embed.addField(`Барааны нэр: ${k}`,`ширхэг: **${arrayToObject[k]}**`, false));
+const result = Object.keys(arrayToObject).map(k => embed.addField(`Role: ${k}`,`: **${arrayToObject[k]}**`, false));
   
  
   return message.channel.send(embed);
 }
 exports.help = {
-  name: "inventory",
+  name: "roleinventory",
   aliases: ["inv"],
-  usage: `inv`
+  usage: `roleinv`
 }

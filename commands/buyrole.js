@@ -10,10 +10,13 @@ exports.execute = async (client, message, args) => {
   let isRoleBalanceEnough = (userBalance.amount >= hasRole.cost);
   if (!isRoleBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasRole.cost+" төгрөгөөр энэ Role ыг авна.");
   let buyrole = client.eco.moneyRemove(message.author.id, hasRole.cost);
+  
   let roleStruct = {
     name: role.toLowerCase(),
     prize: hasRole.cost
-    }
+  }
+  
+  
   client.db.push(`role_${message.authot.id}`, roleStruct);
   return message.channel.send(`**${role}** амжилттай авагдлаа Rolestore ын захирал орж ирээд Role ыг тань өгөх болно`);
 }
