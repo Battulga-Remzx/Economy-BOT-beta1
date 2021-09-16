@@ -1,14 +1,12 @@
 # Welcome To EconomyBot <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
-## This EconomyBot was written by 0_0#6666
-### Language : JavaScript/NodeJS (Core Lang : EN)
+## This EconomyBot was written by Veronica#2053
+### Language : JavaScript/NodeJS (Core Lang : MN)
 ##### Library : Discord.js
 ###### Framework used : quick.eco by Snowflake Development
 
 ##### IN BOTCONFIG.JSON DO NOT CHANGE ANY VARIABLE THE CountChannel var is for if you want to set a channel to count for users if not just leave it blank AND EVERYTHING ELSE IS SELF EPLAINATORY JUST CHANGE THE VALUES INSIDE "" TO MAKE YOUR BOT FUNCTION PROPERLY!
 # Links
-- 🔗 [Youtube Channel](https://www.youtube.com/channel/UCF9E-xef9jL9QgziZRDHKKQ)
-- [Support Server Link](https://discord.gg/ARu4hr6hJw)
-# Copyright 
+
 Copyright 2020 © All RIghts are Reserved | If you are using any part of code please give me credits for the same. Thanks
 
 # License
@@ -30,11 +28,6 @@ Copyright 2020 © All RIghts are Reserved | If you are using any part of code pl
 DM ME FOR A SCRIPT THAT PREVENTS THIS JOIN THE SERVER ABOVE AND DM  ME @0_0#6666 THIS MIGHT GET YOUR PROJECT SUSPENDED BUT YOU CAN ALWAYS
 MAKE A NEW ONE USING MY TUTORIAL :D``**
 ``IT WORKS ON REPL.IT PRETTY FINE ITS BEEN TESTED ALREADY``
-
-# Host On Repl.it
-[![Use on Repl.it](https://repl.it/badge/github/ZeroDiscord/EconomyBot)](https://repl.it/github/ZeroDiscord/EconomyBot)
-# Host On Glitch 
-[Click Here to Host On Glitch](https://glitch.com/edit/#!/import/git?url=https://github.com/ZeroDiscord/EconomyBot/)
 
 # Dependencies 
 - *Discord.js v12*
