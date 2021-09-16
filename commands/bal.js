@@ -6,8 +6,8 @@ exports.execute = async (client, message, args) => {
     const embed = new MessageEmbed()
         .setTitle(`Данс шалгаж байна`)
         .addField(`Хэрэглэгчийн нэр`, `<@${userBalance.user}>`)
-        .addField(`Мөнгө`, `${userBalance.amount} 💸`)
-        .addField(`Сервэр`, userBalance.position)
+        .addField(`Мөнгө`, `${userBalance.amount} 💸байна`)
+        .addField(`Leaderboard Rank`, userBalance.position)
         .setColor("RANDOM")
         .setThumbnail(user.displayAvatarURL)
         .setTimestamp();
