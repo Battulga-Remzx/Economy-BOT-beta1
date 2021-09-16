@@ -33,16 +33,16 @@ client.shop = {
 //Role Худалдаа
 client.buyrole = {
   vip: {
-    cost:500000
+    cost: 500000
     },
   changerole: {
-    cost:50000
+    cost: 50000
     },
   customrole: {
-    cost:200000
+    cost: 200000
     },
   publicrole: {
-    cost:500000
+    cost: 500000
     }
   };
 const fs = require("fs");
