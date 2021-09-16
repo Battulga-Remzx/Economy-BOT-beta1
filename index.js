@@ -1,13 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({ disableMentions: 'everyone' });
 const Eco = require("quick.eco");
-const keepAlive = require("./server.js");
 client.eco = new Eco.Manager(); // quick.eco
 client.db = Eco.db; // quick.db
 client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
-keepAlive();
 //Дэлгүүр
 client.shop = {
   icecream: {
@@ -70,6 +68,6 @@ fs.readdir("./commands/", (err, files) => {
         });
     });
 });
-
-
+exports.keepAlive
+const keepAlive = require("./server.js");
 client.login(client.config.token);
