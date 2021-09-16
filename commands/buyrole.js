@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
   let userBalance = client.eco.fetchMoney(message.author.id);
-  if (userBalance.amount < 1) return message.channel.send("Чи яг л ядуу хүн шиг харагдаж байна.");
+  if (userBalance.amount < 0) return message.channel.send("Чи яг л ядуу хүн шиг харагдаж байна.");
   let role = args[0];
   if (!role) return message.channel.send("Ямар Role авахаа хойно нь бичнэ үү");
   let hasRole = client.buyrole[role.toLowerCase()];
@@ -23,4 +23,5 @@ exports.execute = async (client, message, args) => {
 exports.help = {
   name: "buyrole",
 aliases: [],
-usage: `buyrole <role>`}
+usage: `buyrole <role>`
+};
