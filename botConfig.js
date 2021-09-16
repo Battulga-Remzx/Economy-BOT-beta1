@@ -1,8 +1,8 @@
 module.exports = {
-    token: "ODg3Mzk4MDExOTAxMTk0MjQw.YUDjzQ.nXUZnZOLDVpWadHq7jnEmF8muq4",
+    token: "Token",
     prefix: "~",
     admins: [
-        "715428540954181714"
+        "Admins ID"
 ],
     debug: true,
     countChannel: "countChannelID"
