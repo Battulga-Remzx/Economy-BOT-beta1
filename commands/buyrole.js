@@ -9,7 +9,7 @@ exports.execute = async (client, message, args) => {
   if (!hasRole || hasRole == undefined) return message.reply("Ийм Role байхгүй байна хүсвэл Role store ын захирал руу хүсэлт гаргаж болно шүү ");
   let isRoleBalanceEnough = (userBalance.amount >= hasRole.cost);
   if (!isRoleBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasRole.cost+" төгрөгөөр энэ Role ыг авна.");
-  let buyrole = client.eco.moneyRemove1(message.author.id, hasRole.cost);
+  let buyrole = client.eco.moneyRemove(message.author.id, hasRole.cost);
   
   let roleStruct = {
     name: role.toLowerCase(),
@@ -18,11 +18,11 @@ exports.execute = async (client, message, args) => {
   
   
   client.db.push(`roles_${message.authot.id}`, roleStruct);
-  return message.channel.send(`**${role}** амжилттай авагдлаа Rolestore ын захирал орж ирээд Role ыг тань өгөх болно`);
+  return message.channel.send(`**${role}** амжилттай авагдлаа **:dollar: ${hasRole.cost}** Rolestore ын захирал орж ирээд Role ыг тань өгөх болно`);
 }
 
 exports.help = {
   name: "buyrole",
   aliases: [],
-  usage: `buyrole <roles>`
+  usage: `buyrole <role>`
 };
