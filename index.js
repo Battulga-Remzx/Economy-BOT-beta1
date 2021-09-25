@@ -30,21 +30,6 @@ client.shop = {
     cost:20000000
   }
 };
-//Role Худалдаа
-client.rolestore = {
-  vip: {
-    cost: 500000
-    },
-  changerole: {
-    cost: 50000
-    },
-  customrole: {
-    cost: 200000
-    },
-  publicrole: {
-    cost: 500000
-    }
-  };
 const fs = require("fs");
 
 fs.readdir("./events/", (err, files) => {
