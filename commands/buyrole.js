@@ -9,7 +9,7 @@ exports.execute = async (client, message, args) => {
   if (!hasRole || hasRole == undefined) return message.reply("Ийм Role байхгүй байна хүсвэл Role store ын захирал руу хүсэлт гаргаж болно шүү ");
   let isRoleBalanceEnough = (userBalance.amount >= hasRole.cost);
   if (!isRoleBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasRole.cost+" төгрөгөөр энэ Role ыг авна.");
-  let buyrole = client.eco.moneyRemove(message.author.id, hasRole.cost);
+  let buyrole = client.eco.removeMoney(message.author.id, hasRole.cost);
   
   let roleStruct = {
     name: role.toLowerCase(),

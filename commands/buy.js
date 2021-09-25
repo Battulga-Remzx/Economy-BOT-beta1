@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
 }
 
 exports.help = {
-    name: "buy",
-    aliases: [],
-    usage: `buy <item>`
+  name: "buy",
+  aliases: [], 
+  usage: `buy <item>`
 };
