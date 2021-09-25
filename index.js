@@ -31,7 +31,7 @@ client.shop = {
   }
 };
 //Role Худалдаа
-client.buyrole = {
+client.rolestore = {
   vip: {
     cost: 500000
     },
