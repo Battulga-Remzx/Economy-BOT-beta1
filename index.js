@@ -69,4 +69,7 @@ exports.keepAlive = (client, Message, Args) => {
 const keepAlive = require("./server.js");
 keepAlive();
 }
+
+
+
 client.login(client.config.token);
