@@ -11,6 +11,9 @@ client.shop = {
   icecream: {
     cost: 3000
   },
+  water: {
+    cost: 5000
+  },
   laptop: {
     cost: 1000000
   },
