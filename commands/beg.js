@@ -1,7 +1,7 @@
 exports.execute = async (client, message, args) => {
     let users = [
-        "Батука",
-        "Your Crush",
+        "Remzx Sponser",
+        "Remzx Company",
         "Remzx Official",
         "Boss"
     ];
