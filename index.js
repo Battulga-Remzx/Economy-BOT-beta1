@@ -14,6 +14,9 @@ client.shop = {
   water: {
     cost: 5000
   },
+  hool: {
+    cost: 10000
+  },
   laptop: {
     cost: 1000000
   },
@@ -31,7 +34,13 @@ client.shop = {
   },
   ferrari: {
     cost:20000000
-  }
+  },
+  mongolger: {
+    cost: 1000000
+  },
+  house: {
+    cost: 7000000
+  },
 };
 const fs = require("fs");
 
