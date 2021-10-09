@@ -35,13 +35,10 @@ client.shop = {
   ferrari: {
     cost:20000000
   },
-  mongolger: {
-    cost: 1000000
-  },
-  house: {
-    cost: 7000000
-  },
 };
+client.home = {
+mongol_ger: {cost: 1000000
+},
 const fs = require("fs");
 
 fs.readdir("./events/", (err, files) => {
