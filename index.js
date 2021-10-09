@@ -37,9 +37,15 @@ client.shop = {
   },
 };
 client.home = {
-mongol_ger: {cost: 1000000
+mongol_ger: {
+  cost: 1000000
 },
-const fs = require("fs");
+  house: {
+cost: 7000000
+  },
+};
+
+  const fs = require("fs");
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
