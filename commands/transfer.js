@@ -10,7 +10,7 @@ exports.execute = async (client, message, args) => {
 }
 
 exports.help = {
-  name: "transfer",
-  aliases: ['give', 'share'],
+  name: "---------------Мөнгө шилжүүлэх",
+  aliases: ['give', 'share', 'transfer'],
   usage: `transfer <member> <amount>`
 };
