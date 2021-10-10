@@ -20,7 +20,7 @@ exports.execute = async (client, message, args) => {
     );
   }
 
-  let random = Math.floor(Math.random() * 5000) + 1; // random number 200-1, you can change 200 to whatever you'd like
+  let random = Math.floor(Math.random() * 50) + 1; // random number 200-1, you can change 200 to whatever you'd like
 
   if (random.onCooldown) return message.reply(`${random.time.minutes} цаг ${random.time.seconds}`)
   
