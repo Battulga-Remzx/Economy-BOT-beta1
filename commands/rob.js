@@ -8,14 +8,14 @@ exports.execute = async (client, message, args) => {
 
 
     if (!user) {
-        return message.channel.send('дээрэмдэх хүнээ сонгоно уу!')
+        return message.channel.send(':x: дээрэмдэх хүнээ сонгоно уу!')
     }
     if (author < 50000) { // if the authors balance is less than 250, return this.
         return message.channel.send(':x: You need atleast 250$ to rob somebody.')
     }
 
-    if (targetuser < 0) { // if mentioned user has 0 or less, it will return this.
-        return message.channel.send(`:x: ${user.user.username}-д хэтэрхий бага мөнгөтэй болсон байна`)
+    if (targetuser < 5000) { // if mentioned user has 0 or less, it will return this.
+        return message.channel.send(`:x: ${user.user.username} хэтэрхий бага мөнгөтэй болсон байна`)
     }
 
 
@@ -23,7 +23,7 @@ exports.execute = async (client, message, args) => {
 
 
     let embed = new MessageEmbed()
-    .setDescription(`${message.author} you robbed ${user} and got away with ${random}!`)
+    .setDescription(`${user} хөөе  ${message.author} чамайг ${random} төгрөг-өөр дээрэмдлээ !`)
     .setColor("GREEN")
     .setTimestamp()
     message.channel.send(embed)
