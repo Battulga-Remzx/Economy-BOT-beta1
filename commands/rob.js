@@ -1,12 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
+  if (!client.config.mafias.includes(message.author.id)) return;
   let user = message.mentions.members.first();
-  let rob = client.eco.work(client.ecoAddUser);
-  if (rob.onCooldown)
-    return message.reply(
-      `Чи ядарсан байна дараа дахиж ажилаа хийгээрэй ${rob.time.minutes} минут & ${rob.time.seconds} секундын дараа.`
-    );
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`); // fetch authors balance
 
