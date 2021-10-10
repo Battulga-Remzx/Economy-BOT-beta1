@@ -1,7 +1,6 @@
 const { MessageEmbed } = require("discord.js");
-
+let role = message.guild.roles.cache.find(r => r.id === "Role ID");
 exports.execute = async (client, message, args) => {
-  if(!client.config.mafias.includes(message.r.id)) return;
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`); // fetch authors balance
