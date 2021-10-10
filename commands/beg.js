@@ -13,7 +13,7 @@ exports.execute = async (client, message, args) => {
 };
 
 exports.help = {
-    name: "---------------Бяцхан бэлэг",
+    name: "---------------Бяцхан бэлэг----------",
     aliases: ["beg"],
     usage: "beg"
 }

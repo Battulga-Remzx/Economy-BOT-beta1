@@ -6,7 +6,7 @@ module.exports.execute = async (client, message, args) => {
 };
 
 module.exports.help = {
-    name: "---------------Ажилын хөлсөө авах",
+    name: "---------------Ажилын хөлсөө авах------",
     aliases: ["work"],
     usage: "work"
 }
