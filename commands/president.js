@@ -1,10 +1,10 @@
 exports.execute = async (client, message, args) => {
-  if (!client.config.miners.includes(message.author.id)) return;
+  if (!client.config.president.includes(message.author.id)) return;
   let users = ["Mining...", "Mining...", "Mining..", "Mining..."];
   let amount = Math.floor(Math.random() * 15000) + 5000;
   let president = await client.eco.beg(client.ecoAddUser, amount, {
     canLose: true,
-    cooldown: 30000000,
+    cooldown: 90000000,
     customName: "search"
   });
   if (president.onCooldown)
@@ -29,6 +29,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
   name: "---------------Уурхайчид--------",
-  aliases: ["president"],
+  aliases: ["president", "pre"],
   usage: "president"
 };
