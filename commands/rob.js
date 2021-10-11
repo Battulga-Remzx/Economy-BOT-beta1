@@ -5,15 +5,7 @@ exports.execute = async (client, message, args) => {
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`);  
-  let rob = await client.eco.beg(client.ecoAddUser, random, {
-    canLose: true,
-    cooldown: 300000,
-    customName: "search"
-  });
-    if (rob.onCooldown)
-    return message.reply(
-      `Та ядарсан байна ${rob.time.minutes} минут  ${mine.time.seconds} секундын дараа ажилаа хийгээрэй.`
-    );
+  
   if (!user) {
     return message.channel.send(":x: дээрэмдэх хүнээ сонгоно уу!");
   }
@@ -29,7 +21,7 @@ exports.execute = async (client, message, args) => {
     );
   }
 
-  let random = Math.floor(Math.random() * 1000) + 100; // random number 200-1, you can change 200 to whatever you'd like
+  let random = Math.floor(Math.random() * 500) + 100; // random number 200-1, you can change 200 to whatever you'd like
 
   let embed = new MessageEmbed()
     .setDescription(

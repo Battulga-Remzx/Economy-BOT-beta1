@@ -1,13 +1,34 @@
 exports.execute = async (client, message, args) => {
-    if(!client.config.president.includes(message.author.id))return;
-  let amount = Math.floor(Math.random() * 10) + 1;
-    let president = client.eco.president(client.ecoAddUser, amount);
-    if (president.onCooldown) return message.reply(`Аль хэдийнээ авчихсан байна дараа дахиж оруулна уу! ${president.time.days} хоног, ${president.time.hours} цаг, ${president.time.minutes} минут & ${president.time.seconds} секунт-ын дараа авна уу.`);
-    else return message.reply(`Таний мөнгө авагдлаа.Нийт: **${president.amount}** 💸 ерөнхийлөгчийн авсан цалин **${president.after}** 💸. таньд ажилын амжилт хүсье`);
+  if (!client.config.miners.includes(message.author.id)) return;
+  let users = ["Mining...", "Mining...", "Mining..", "Mining..."];
+  let amount = Math.floor(Math.random() * 15000) + 5000;
+  let president = await client.eco.beg(client.ecoAddUser, amount, {
+    canLose: true,
+    cooldown: 30000000,
+    customName: "search"
+  });
+  if (president.onCooldown)
+    return message.reply(
+      `Та ядарсан байна ${president.time.minutes} минут  ${president.time.seconds} секундын дараа ажилаа хийгээрэй.`
+    );
+  if (president.lost)
+    return message.channel.send(
+      `**${
+        users[Math.floor(Math.random() * users.length)]
+      }:** харамсалтай байна та мөнгө олдворлож чадсангүй`
+    );
+  else
+    return message.reply(
+      `**${
+        users[Math.floor(Math.random() * users.length)]
+      }** ажил амжилттай **${president.amount}** 💸. энэ таны олсон цалин **${
+        president.after
+      }** 💸 таний нийт мөнгө.`
+    );
 };
 
 exports.help = {
-    name: "---------------Ерөнхийлөгч----------",
-    aliases: ["president", "pre"],
-    usage: "president"
-}
+  name: "---------------Уурхайчид--------",
+  aliases: ["president"],
+  usage: "president"
+};
