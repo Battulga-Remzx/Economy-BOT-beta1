@@ -11,7 +11,7 @@ module.exports = {
 
 run: async (client, message, args) => {
 
-    let user = message.author;
+    let user =  let authordata = client.eco.fetchMoney(message.author.id) 
 
     let moneydb = await client.db.fetch(`money_${message.guild.id}_${user.id}.pocket`)
 
