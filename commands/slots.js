@@ -17,9 +17,7 @@ exports.execute = async (client, message, args) => {
 
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
-    .setDescription(
-      `<a:x:737764891657633814> таний мөнгө хүрэхгүй байна`
-    );
+    .setDescription(`<a:x:737764891657633814> таний мөнгө хүрэхгүй байна`);
 
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
@@ -46,22 +44,25 @@ exports.execute = async (client, message, args) => {
   }
   if (win) {
     let slotsEmbed1 = new MessageEmbed()
-      .title("Баяр хүргэе")
-    .setDescription(
+      .setTitle("Баяр хүргэе")
+      .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
         }\n\nЧи ${money} төгрөг хожлоо`
       )
+      .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed1);
     await client.db.add(`money_${message.guild.id}_${author.id}.pocket`, money);
   } else {
     let slotsEmbed = new MessageEmbed()
+      .setTitle("Дампуурлаа боль боль")
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
         }\n\nЧи ${money} төгрөг алдлаа`
       )
+      .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
     await client.db.subtract(`money_${message.author.id}`, money);
