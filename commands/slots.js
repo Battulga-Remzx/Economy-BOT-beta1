@@ -1,5 +1,5 @@
 const slotItems = [
-  ":grape:",
+  ":lemon:",
   ":banana:",
   "🍊",
   ":apple:",
@@ -18,12 +18,12 @@ exports.execute = async (client, message, args) => {
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<a:false:737764891657633814> You are betting more than you have`
+      `<a:x:737764891657633814> таний мөнгө хүрэхгүй байна`
     );
 
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
-    .setDescription(`<a:амжилтгүй:737764891657633814> Бооцооны мөнгөө тавьна уу`);
+    .setDescription(`<a:x:737764891657633814> Бооцооны мөнгөө тавьна уу`);
 
   if (!money) return message.channel.send(moneyhelp);
   if (money > moneydb) return message.channel.send(moneymore);
