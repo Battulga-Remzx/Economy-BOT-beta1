@@ -11,13 +11,17 @@ if(!x) { return message.channel.send(`ямар ч бараа байхгүй ба
 const arrayToObject = x.reduce((itemsobj, x) => {
     itemsobj[x.name] = (itemsobj[x.name] || 0) + 1;
     return itemsobj;
-  const arraySellObject = (item)
-}, {});
+  const arraySellObject = x.reduce((itemssell, x) => {
+itemssell [x.name] = (itemssel [x.name] || 0) -1;
+  }
+                                                            
+, {});
 const result = Object.keys(arrayToObject).map(k => embed.addField(`Барааны нэр: ${k}`,`ширхэг: **${arrayToObject[k]}**`, false));
-  const result2 = Object.keys(arrayToObject.map(k => embed.removeField()))
+  const result2 = Object.keys(arraySellObject).map(k => embed.removeField())
  
   return message.channel.send(embed);
 }
+                                                    
 exports.help = {
   name: "---------------Таний авсан зүйлс----------",
   aliases: ["inv"],
