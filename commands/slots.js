@@ -8,21 +8,20 @@ const slotItems = [
   ":cherries:"
 ];
 const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
-  let moneydb = await client.db.fetch(`money_${message.guild.id}_${author.id}`)
-  let author = await client.db.fetch(`money_${message.author.id}`);
+  let moneydb = await client.db.fetch(`money_${message.author.id}`);
+  let author = message.mentions.users.first() || message.author;
   let money = parseInt(args[0]);
-
   let win = false;
 
-  let moneymore = new Discord.MessageEmbed()
+  let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
       `<a:false:737764891657633814> You are betting more than you have`
     );
 
-  let moneyhelp = new Discord.MessageEmbed()
+  let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(`<a:false:737764891657633814> Specify an amount`);
 
@@ -46,7 +45,7 @@ exports.execute = async (client, message, args) => {
     win = true;
   }
   if (win) {
-    let slotsEmbed1 = new Discord.MessageEmbed()
+    let slotsEmbed1 = new MessageEmbed()
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
@@ -56,7 +55,7 @@ exports.execute = async (client, message, args) => {
     message.channel.send(slotsEmbed1);
     await client.db.add(`money_${message.guild.id}_${author.id}.pocket`, money);
   } else {
-    let slotsEmbed = new Discord.MessageEmbed()
+    let slotsEmbed = new MessageEmbed()
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
@@ -64,10 +63,7 @@ exports.execute = async (client, message, args) => {
       )
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
-    await client.db.subtract(
-      `money_${message.guild.id}_${author.id}.pocket`,
-      money
-    );
+    await client.db.subtract(`money_${message.author.id}`, money);
   }
 };
 exports.help = {
