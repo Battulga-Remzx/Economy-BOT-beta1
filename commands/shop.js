@@ -6,6 +6,7 @@ exports.execute = async (client, message, args) => {
   
   for (var i in items) {
     content += `${items[i]} - :dollar: ${client.shop[items[i]].cost}\n`
+ content -= `${items[i]}- :dollar:`
   }
   
   let embed = new MessageEmbed()
