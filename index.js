@@ -7,6 +7,7 @@ client.config = require("./botConfig");
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+client.cooldowns = new Discord.Collection();
 //Дэлгүүр
 client.shop = {
   icecream: {

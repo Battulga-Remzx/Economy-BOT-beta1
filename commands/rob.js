@@ -39,4 +39,5 @@ exports.help = {
   name: "---------------Дээрэм хийх----------",
   aliases: ["rob"],
   usage: `rob <member>`
+  cooldowns: 5;
 };
