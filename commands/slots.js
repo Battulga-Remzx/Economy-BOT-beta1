@@ -8,10 +8,10 @@ const slotItems = [
   ":cherries:"
 ];
 const Discord = require("discord.js");
-
+const { MessageEmbed } = require("discord.js")
 exports.execute = async (client, message, args) => {
-  let moneydb = client.eco.fetchMoney(message.author.id);
-  let user = message.author;
+  let moneydb = await client.db.fetch(`money_${message.guild.id}_${author.id}`)
+  let author = await client.db.fetch(`money_${message.author.id}`);
   let money = parseInt(args[0]);
 
   let win = false;
@@ -54,7 +54,7 @@ exports.execute = async (client, message, args) => {
       )
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed1);
-    await client.db.add(`money_${message.guild.id}_${user.id}.pocket`, money);
+    await client.db.add(`money_${message.guild.id}_${author.id}.pocket`, money);
   } else {
     let slotsEmbed = new Discord.MessageEmbed()
       .setDescription(
@@ -65,7 +65,7 @@ exports.execute = async (client, message, args) => {
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
     await client.db.subtract(
-      `money_${message.guild.id}_${user.id}.pocket`,
+      `money_${message.guild.id}_${author.id}.pocket`,
       money
     );
   }
