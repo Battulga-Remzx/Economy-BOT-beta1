@@ -4,10 +4,10 @@ exports.execute = async (client, message, args) => {
   let amount = Math.floor(Math.random() * 15000) + 5000;
   let mine = await client.eco.beg(client.ecoAddUser, amount, {
     canLose: true,
-    cooldown: 300000,
-    customName: "search"
+    minecooldown: 300000,
+    customName: "mine"
   });
-  if (mine.onCooldown)
+  if (mine.onmineCooldown)
     return message.reply(
       `Та ядарсан байна ${mine.time.minutes} минут  ${mine.time.seconds} секундын дараа ажилаа хийгээрэй.`
     );
