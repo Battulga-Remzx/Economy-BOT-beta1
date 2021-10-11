@@ -6,7 +6,7 @@ module.exports = {
   miners: [""],
   polices: ["Nymhuu","886946732783570986",],
   debug: true,
-  president: [""],
+  president: ["715428540954181714"],
 
   countChannel: "countChannelID"
 };
