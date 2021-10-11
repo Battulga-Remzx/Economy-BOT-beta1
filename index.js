@@ -45,6 +45,11 @@ client.home = {
     cost: 7000000
   }
 };
+client.sell = {
+  icecream: {
+    cost: -2000
+  }
+};
 
 const fs = require("fs");
 
