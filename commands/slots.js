@@ -46,10 +46,11 @@ exports.execute = async (client, message, args) => {
   }
   if (win) {
     let slotsEmbed1 = new MessageEmbed()
-      .setDescription(
+      .title("Баяр хүргэе")
+    .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
-        }\n\nYou won ${money} coins`
+        }\n\nЧи ${money} төгрөг хожлоо`
       )
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed1);
@@ -59,7 +60,7 @@ exports.execute = async (client, message, args) => {
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
-        }\n\nYou lost ${money} coins`
+        }\n\nЧи ${money} төгрөг алдлаа`
       )
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
