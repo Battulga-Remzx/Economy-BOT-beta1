@@ -47,7 +47,7 @@ client.home = {
 };
 client.sellitem = {
   icecream: {
-    sell: -2000
+    sell: 2000
   }
 };
 
