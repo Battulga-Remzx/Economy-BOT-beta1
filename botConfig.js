@@ -3,6 +3,7 @@ module.exports = {
   prefix: "~",
   admins: ["715428540954181714"],
   mafias: ["765593479010320424","877484899517468712","811447438472380459"],
+  miners: [""],
   debug: true,
 
   countChannel: "countChannelID"
