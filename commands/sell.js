@@ -5,7 +5,7 @@ exports.execute = async (client, message, args) => {
   if (userBalance.amount < 1) return message.channel.send("Чи яг л ядуу хүн шиг харагдаж байна.");
   let item = args[0];
   if (!item) return message.channel.send("юу зарахаа бичнэ үү?");
-  let hasItem = client.sell[item.toLowerCase()];
+  let hasItem = client.sellitem[item.toLowerCase()];
   if (!hasItem || hasItem == undefined) return message.reply("Ийм бараа байхгүй байна");
   let isBalanceEnough = (userBalance.amount >= hasItem.sell);
   

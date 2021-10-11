@@ -45,9 +45,9 @@ client.home = {
     cost: 7000000
   }
 };
-client.sell = {
+client.sellitem = {
   icecream: {
-    sell: 2000
+    sell: -2000
   }
 };
 
