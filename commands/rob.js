@@ -4,8 +4,16 @@ exports.execute = async (client, message, args) => {
   if (!client.config.mafias.includes(message.author.id)) return;
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
-  let author = await client.db.fetch(`money_${message.author.id}`); // fetch authors balance
-
+  let author = await client.db.fetch(`money_${message.author.id}`);  
+  let rob = await client.eco.beg(client.ecoAddUser, random, {
+    canLose: true,
+    cooldown: 300000,
+    customName: "search"
+  });
+    if (rob.onCooldown)
+    return message.reply(
+      `Та ядарсан байна ${rob.time.minutes} минут  ${mine.time.seconds} секундын дараа ажилаа хийгээрэй.`
+    );
   if (!user) {
     return message.channel.send(":x: дээрэмдэх хүнээ сонгоно уу!");
   }
