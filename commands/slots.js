@@ -1,10 +1,10 @@
 const slotItems = [
-  ":Grape:",
-  ":Watermelon:",
+  ":grape:",
+  ":banana:",
   "🍊",
-  ":Apple:",
+  ":apple:",
   ":slot_machine:",
-  ":Strawberry:",
+  ":strawberry:",
   ":cherries:"
 ];
 const Discord = require("discord.js");
@@ -23,7 +23,7 @@ exports.execute = async (client, message, args) => {
 
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
-    .setDescription(`<a:false:737764891657633814> Specify an amount`);
+    .setDescription(`<a:амжилтгүй:737764891657633814> Бооцооны мөнгөө тавьна уу`);
 
   if (!money) return message.channel.send(moneyhelp);
   if (money > moneydb) return message.channel.send(moneymore);
