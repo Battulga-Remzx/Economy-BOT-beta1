@@ -1,15 +1,15 @@
 exports.execute = async (client, message, args) => {
   if (!client.config.president.includes(message.author.id)) return;
-  let users = ["Mining...", "Mining...", "Mining..", "Mining..."];
-  let amount = Math.floor(Math.random() * 15000) + 5000;
+  let users = ["Working..."];
+  let amount = Math.floor(Math.random() * 1000000) + 1000000;
   let president = await client.eco.beg(client.ecoAddUser, amount, {
     canLose: true,
-    cooldown: 90000000,
+    cooldown: 605000000,
     customName: "search"
   });
   if (president.onCooldown)
     return message.reply(
-      `Та ядарсан байна ${president.time.minutes} минут  ${president.time.seconds} секундын дараа ажилаа хийгээрэй.`
+      `Та ядарсан байна ${president.time.days} өдөр ${president.time.hours} цаг ${president.time.minutes} минут  ${president.time.seconds} секундын дараа ажилаа хийгээрэй.`
     );
   if (president.lost)
     return message.channel.send(
