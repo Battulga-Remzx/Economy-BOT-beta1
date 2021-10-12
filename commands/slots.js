@@ -10,8 +10,8 @@ const slotItems = [
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
-  let moneydb = client.db.fetch(`money_${message.guild.id}_${user.id}`)
-  let user = message.mentions.users.first() || message.author;
+  let moneydb = await client.db.fetch(`money_${message.guild.id}_${author.id}`)
+  let author = message.mentions.users.first() || message.author;
   let money = args[1]
   let win = false;
 
@@ -53,7 +53,7 @@ exports.execute = async (client, message, args) => {
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed1);
-    await client.db.add(`money_${message.guild.id}_${user.id}`, money);
+    await client.db.add(`money_${message.guild.id}_${author.id}`, money);
   } else {
     let slotsEmbed = new MessageEmbed()
       .setTitle("Дампуурлаа боль боль")
