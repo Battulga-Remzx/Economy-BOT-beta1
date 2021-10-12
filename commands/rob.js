@@ -26,7 +26,7 @@ exports.execute = async (client, message, args) => {
 
   let embed = new MessageEmbed()
     .setDescription(
-      `${user} хөөе  ${message.author} чамайг ${random} төгрөг-өөр дээрэмдлээ! таньд одоо байгаа мөнгө ${userBalance.money}`
+      `${user} хөөе  ${message.author} чамайг ${random} төгрөг-өөр дээрэмдлээ!`
     )
     .setColor("GREEN")
     .setTimestamp();
