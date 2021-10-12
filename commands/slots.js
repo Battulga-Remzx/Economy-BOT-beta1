@@ -7,13 +7,14 @@ const slotItems = [
   ":strawberry:",
   ":cherries:"
 ];
-const Discord = require("discord.js");
+
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
   let moneydb = client.eco.fetchMoney(message.author.id);
   let author = message.author;
   let money = parseInt(args[0]);
   let win = false;
+  let claim = money * 2;
   
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
@@ -52,7 +53,7 @@ exports.execute = async (client, message, args) => {
       )
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
-    message.channel.send(slotsEmbed1);
+    message.channel.send(slotsEmbed1)
     await client.db.add(`money_${message.guild.id}_${author.id}`, money);
   } else {
     let slotsEmbed = new MessageEmbed()
@@ -64,7 +65,7 @@ exports.execute = async (client, message, args) => {
       )
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
-    message.channel.send(slotsEmbed);
+    message.channel.send(slotsEmbed)
     await client.db.subtract(`money_${message.author.id}`, money);
   }
 };
