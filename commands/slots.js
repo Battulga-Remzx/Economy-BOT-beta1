@@ -53,7 +53,7 @@ exports.execute = async (client, message, args) => {
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed1);
-    await client.db.add(`money_${message.guild.id}_${author.id}.pocket`, money);
+    await client.db.add(`money_${message.guild.id}_${author.id}`, money);
   } else {
     let slotsEmbed = new MessageEmbed()
       .setTitle("Дампуурлаа боль боль")
