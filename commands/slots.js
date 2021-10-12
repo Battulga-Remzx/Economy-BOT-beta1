@@ -10,11 +10,11 @@ const slotItems = [
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
-  let moneydb = client.eco.fetchMoney(author.id);
-  let author = message.mentions.users.first() || message.author;
-  let money = args[1]
+  let moneydb = client.eco.fetchMoney(message.author.id);
+  let author = message.author;
+  let money = parseInt(args[0]);
   let win = false;
-
+  
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(`<a:x:737764891657633814> таний мөнгө хүрэхгүй байна`);
