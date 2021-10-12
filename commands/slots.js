@@ -10,7 +10,7 @@ const slotItems = [
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
-  let moneydb = await client.db.fetch(`money_${message.guild.id}_${author.id}`)
+  let moneydb = client.eco.fetchMoney(author.id);
   let author = message.mentions.users.first() || message.author;
   let money = args[1]
   let win = false;
