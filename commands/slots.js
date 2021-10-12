@@ -11,7 +11,7 @@ const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
   let moneydb = client.eco.fetchMoney(message.author.id)
   let author = message.author;
-  let money = parseInt(args[0]);
+  var money = parseInt(args[0]);
   let win = false;
   
   

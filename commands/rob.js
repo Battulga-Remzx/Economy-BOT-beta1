@@ -8,10 +8,21 @@ exports.execute = async (client, message, args) => {
   let author = await client.db.fetch(`money_${message.author.id}`);  
   let userBalance = client.eco.fetchMoney(user.id);
   
+  let timeout = 600000;
+
+if (author !== null && timeout - (Date.now() - author) > 0) {
+    let time = ms(timeout - (Date.now() - author));
+
+    let timeEmbed = new MessageEmbed()
+    .setColor("#FFFFFF")
+    .setDescription(`<:Cross:618736602901905418> You have already robbed someone\n\nTry again in ${time.minutes}m ${time.seconds}s `);
+    message.channel.send(timeEmbed)
+  }
+  
   if (!user) {
     return message.channel.send(":x: дээрэмдэх хүнээ сонгоно уу!");
   }
-  if (author < 50000) {
+  if (author < 250) {
     // if the authors balance is less than 250, return this.
     return message.channel.send(":x: You need atleast 250$ to rob somebody.");
   }
