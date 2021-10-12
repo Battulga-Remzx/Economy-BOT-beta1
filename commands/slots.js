@@ -55,7 +55,7 @@ exports.execute = async (client, message, args) => {
     await client.db.add(`money_${message.author.id}`, money);
   } else {
     let slotsEmbed = new MessageEmbed()
-      .setTitle("Дампуурлаа боль боль")
+      .setTitle("Дахиад нэг дараад үз")
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]

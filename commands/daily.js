@@ -1,5 +1,5 @@
 module.exports.execute = async (client, message, args) => {
-    let amount = Math.floor(Math.random() * 30000) + 15000;
+    let amount = Math.floor(Math.random() * 30000-20000) + 1;
     let addMoney = client.eco.daily(client.ecoAddUser, amount);
     if (addMoney.onCooldown) return message.reply(`Чи аль хэдийнээ авчихсан байна дараа дахин хийнэ үү! ${addMoney.time.hours} hours, ${addMoney.time.minutes} minutes & ${addMoney.time.seconds} seconds to claim it again.`);
     else return message.reply(`Мөнгө амжилттай авагдлаа **${addMoney.amount}** 💸чамд одоо байгаа **${addMoney.after}** 💸байна.`);
