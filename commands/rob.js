@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
+
 exports.execute = async (client, message, args) => {
   if (!client.config.mafias.includes(message.author.id)) return;
   
@@ -11,7 +12,7 @@ exports.execute = async (client, message, args) => {
   let timeout = 600000;
 
 if (author !== null && timeout - (Date.now() - author) > 0) {
-    let time = ms(timeout - (Date.now() - author));
+    let time = client.cooldown(timeout - (Date.now() - author));
 
     let timeEmbed = new MessageEmbed()
     .setColor("#FFFFFF")
