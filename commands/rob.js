@@ -5,6 +5,7 @@ exports.execute = async (client, message, args) => {
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`);  
+  let userBalance = client.eco.fetchMoney(user.id);
   
   if (!user) {
     return message.channel.send(":x: дээрэмдэх хүнээ сонгоно уу!");
