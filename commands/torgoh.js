@@ -5,7 +5,7 @@ exports.execute = async (client, message, args) => {
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`); // fetch authors balance
-
+let userBalance = client.eco.fetchMoney(user.id);
   if (!user) {
     return message.channel.send(":x: торгох хүнээ сонгоно уу!");
   }
@@ -25,7 +25,7 @@ exports.execute = async (client, message, args) => {
 
   let embed = new MessageEmbed()
     .setDescription(
-      `${user} танийг  ${message.author} цагдаа ${random} төгрөг-өөр торголоо !`
+      `${user} танийг  ${message.author} цагдаа ${random} төгрөг-өөр торголоо ! таньд одоо байгаа мөнгө ${userBalance}`
     )
     .setColor("GREEN")
     .setTimestamp();
