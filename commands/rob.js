@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
   if (!client.config.mafias.includes(message.author.id)) return;
+  
   let user = message.mentions.members.first();
   let targetuser = await client.db.fetch(`money_${user.id}`); // fetch mentioned users balance
   let author = await client.db.fetch(`money_${message.author.id}`);  

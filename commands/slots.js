@@ -7,14 +7,13 @@ const slotItems = [
   ":strawberry:",
   ":cherries:"
 ];
-
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
-  let moneydb = client.eco.fetchMoney(message.author.id);
+  let moneydb = client.eco.fetchMoney(message.author.id)
   let author = message.author;
   let money = parseInt(args[0]);
   let win = false;
-  let claim = money * 2;
+  
   
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
