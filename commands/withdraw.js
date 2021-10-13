@@ -13,28 +13,28 @@ let user = message.author;
     client.db.add(`money_${message.guild.id}_${user.id}`, money)
     let embed5 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:Check:618736570337591296> You have withdrawn all your coins from your bank`);
+  .setDescription(`✅ You have withdrawn all your coins from your bank`);
   message.channel.send(embed5)
   
   } else {
 
   let embed2 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:x:618736602901905418> Specify an amount to withdraw`);
+  .setDescription(`<:x:618736602901905418> бэлэн мөнгө болгох дүнгээ оруулна уу`);
   
   if (!args[0]) {
       return message.channel.send(embed2)
   }
   let embed3 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:Cross:618736602901905418> Урвуу мөнгө `);
+  .setDescription(`<:x:618736602901905418> Урвуу мөнгө оруулч болохгүй`);
 
   if (message.content.includes('-')) { 
       return message.channel.send(embed3)
   }
   let embed4 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:Cross:618736602901905418> You don't have that much money in the bank`);
+  .setDescription(`<:x:618736602901905418> чиний банкан дахь үлдэгдэл хүрэлцэхгүй байна`);
 
   if (member2 < args[0]) {
       return message.channel.send(embed4)
@@ -42,7 +42,7 @@ let user = message.author;
 
   let embed5 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:Check:618736570337591296> You have withdrawn ${args[0]} coins from your bank`);
+  .setDescription(`✅ чи амжилттай  ${args[0]} төгрөгийг бэлэн мөнгө болголоо`);
 
   message.channel.send(embed5)
   client.db.subtract(`bank_${user.id}`, args[0])
