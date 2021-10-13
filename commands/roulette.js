@@ -17,7 +17,7 @@ exports.execute = async (client, message, args) => {
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:x:618736602901905418> Specify an amount to gamble | ~roulette <red, green, black <amount>`
+      `<:x:618736602901905418> өнгө болон бооцоогоо оруулна уу! | ~roulette [red, green, black] <мөнгө>`
     );
 
   let moneymore = new MessageEmbed()
@@ -29,7 +29,7 @@ exports.execute = async (client, message, args) => {
   let colorbad = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:x:618736602901905418> Specify a color | Red [1.5x] Black [2x] Green [15x]`
+      `<:x:618736602901905418> өнгөө сонгоно уу!| Red [1.5x] Black [2x] Green [15x]`
     );
 
   if (!colour) return message.channel.send(colorbad);
@@ -70,7 +70,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:check:618767682996666408> You won ${money} coins\n\nMultiplier: 2x`
+        `BLACK буулаа баяр хүргэе ${message.user.id} ${money} coins\n\nMultiplier: 2x`
       );
     message.channel.send(moneyEmbed3);
   } else {
