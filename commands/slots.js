@@ -22,6 +22,7 @@ exports.execute = async (client, message, args) => {
     .setColor("#FFFFFF")
     .setDescription(`<a:x:737764891657633814> Бооцооны мөнгөө тавьна уу`);
 
+  let bugmoney = new 
   if (!money) return message.channel.send(moneyhelp);
   if (money > moneydb) return message.channel.send(moneymore);
 
