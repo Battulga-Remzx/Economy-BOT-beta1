@@ -60,7 +60,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed2 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:check:618767705444450342> You won ${money} coins\n\nMultiplier: 1.5x`
+        `RED буулаа баяр х${money} coins\n\nMultiplier: 1.5x`
       );
     message.channel.send(moneyEmbed2);
   } else if (!isOdd(random) && colour == 0) {
