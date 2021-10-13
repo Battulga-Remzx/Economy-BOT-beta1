@@ -11,7 +11,8 @@ client.cooldowns = new Discord.Collection();
 //Дэлгүүр
 client.shop = {
   zairmag: {
-    cost: 3000
+    cost: 3000,
+    scost: -2000
   },
   us: {
     cost: 5000
