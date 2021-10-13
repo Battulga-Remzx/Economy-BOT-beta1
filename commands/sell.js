@@ -1,17 +1,20 @@
 const { MessageEmbed } = require("discord.js");
-  const x = client.db.get(`items_${message.author.id}`);
+  
 exports.execute = (client, message , args) => {
- let author = message.author;
-  let sellItem =  
+let item = args[0]
+  let author = message.author;
+  let sellItem = client.shop[item.toLowerCase()];
       
-    let itemStruct {
+  
+  const x = client.db.get(`items_${message.author.id}`);
+    let itemStruct = {
     name: item.toLowerCase(),
     prize: sellItem.scost
-  }
+  };
   
   
   client.db.push(`items_${message.author.id}`, itemStruct);
-  return message.channel.send(`Худалдан авалт **${item}** амжилттай **:dollar: ${hasItem.cost}**  төгрөг болло.`);
+  return message.channel.send(`Худалдан авалт **${item}** амжилттай **:dollar: ${sellItem.scost}**  төгрөг болло.`);
 }
 
 exports.help = {
