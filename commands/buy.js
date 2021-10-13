@@ -4,17 +4,17 @@ exports.execute = async (client, message, args) => {
   
   let user = message.author;
 
-    let author = client.db.fetch(`money_${message.guild.id}_${user.id}`)
+    let author = client.db.fetch(`money_${message.author.id}`);
 
     let Embed = new MessageEmbed()
     .setColor("#FFFFFF")
-    .setDescription(`<:Cross:618736602901905418> You need 2000 coins to purchase Bronze VIP`);
+    .setDescription(`<:Cross:618736602901905418> You need 10000 coins to purchase Bronze VIP`);
 
-    if (args[0] == 'bronze') {
-        if (author < 3500) return message.channel.send(Embed)
+    if (args[0] == 'hool') {
+        if (author < 10000) return message.channel.send(Embed)
         
-        client.db.fetch(`bronze_${message.guild.id}_${user.id}`);
-        client.db.set(`bronze_${message.guild.id}_${user.id}`, true)
+        client.db.fetch(`hool_${user.id}`);
+        client.db.set(`hool_${user.id}`, true)
 
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
@@ -64,14 +64,14 @@ exports.execute = async (client, message, args) => {
         client.db.fetch(`house_${message.guild.id}_${user.id}`)
         client.db.add(`house_${message.guild.id}_${user.id}`, 1)
 
-        let Embed3 = new Discord.RichEmbed()
+        let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Check:618736570337591296> Purchased a Mansion For 1200 Coins`);
 
-        db.subtract(`money_${message.guild.id}_${user.id}`, 1200)
+        client.db.subtract(`money_${message.guild.id}_${user.id}`, 1200)
         message.channel.send(Embed3)
     } else {
-        let embed3 = new Discord.RichEmbed()
+        let embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription('<:Cross:618736602901905418> Enter an item to buy')
         message.channel.send(embed3)
