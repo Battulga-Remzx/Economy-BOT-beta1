@@ -20,55 +20,55 @@ exports.execute = async (client, message, args) => {
         .setColor("#FFFFFF")
         .setDescription(`<:Check:618736570337591296> Purchased Bronze VIP For 3500 Coins`);
 
-        client.db.subtract(`money_${message.guild.id}_${user.id}`, 3500)
+        client.db.subtract(`money_${user.id}`, 10000)
         message.channel.send(Embed2)
-    } else if(args[0] == 'nikes') {
+    } else if(args[0] == 'us') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Cross:618736602901905418> You need 600 coins to purchase some Nikes`);
 
         if (author < 600) return message.channel.send(Embed2)
        
-        client.db.fetch(`nikes_${message.guild.id}_${user.id}`)
-        client.db.add(`nikes_${message.guild.id}_${user.id}`, 1)
+        client.db.fetch(`us_${user.id}`)
+        client.db.add(`us_${user.id}`, 1)
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Check:618736570337591296> Purchased Fresh Nikes For 600 Coins`);
 
-        client.db.subtract(`money_${message.guild.id}_${user.id}`, 600)
+        client.db.subtract(`money_${user.id}`, 3500)
         message.channel.send(Embed3)
     } else if(args[0] == 'car') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Cross:618736602901905418> You need 800 coins to purchase a new car`);
 
-        if (author < 800) return message.channel.send(Embed2)
+        if (author < 10000000) return message.channel.send(Embed2)
        
-        client.db.fetch(`car_${message.guild.id}_${user.id}`)
-        client.db.add(`car_${message.guild.id}_${user.id}`, 1)
+        client.db.fetch(`car_${user.id}`)
+        client.db.add(`car_${user.id}`, 1)
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Check:618736570337591296> Purchased a New Car For 800 Coins`);
 
-        client.db.subtract(`money_${message.guild.id}_${user.id}`, 800)
+        client.db.subtract(`money_${user.id}`, 800)
         message.channel.send(Embed3)
-    } else if(args[0] == 'mansion') {
+    } else if(args[0] == 'iphonex') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:Cross:618736602901905418> You need 1200 coins to purchase a Mansion`);
 
         if (author < 1200) return message.channel.send(Embed2)
        
-        client.db.fetch(`house_${message.guild.id}_${user.id}`)
-        client.db.add(`house_${message.guild.id}_${user.id}`, 1)
+        client.db.fetch(`house_${user.id}`)
+        client.db.add(`house_${user.id}`, 1)
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Check:618736570337591296> Purchased a Mansion For 1200 Coins`);
+        .setDescription(`<:Check:618736570337591296> Purchased a Iphone X For 3000000 Coins`);
 
-        client.db.subtract(`money_${message.guild.id}_${user.id}`, 1200)
+        client.db.subtract(`money_${user.id}`, 3000000)
         message.channel.send(Embed3)
     } else {
         let embed3 = new MessageEmbed()
