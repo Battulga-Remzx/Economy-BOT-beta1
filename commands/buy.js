@@ -18,7 +18,7 @@ exports.execute = async (client, message, args) => {
 
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Check:618736570337591296> 10000төгрөгөөр амжилттай хоол авагдлаа`);
+        .setDescription(`✅ 10000төгрөгөөр амжилттай хоол авагдлаа`);
 
         client.db.subtract(`money_${user.id}`, 10000)
         message.channel.send(Embed2)
@@ -34,7 +34,7 @@ exports.execute = async (client, message, args) => {
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Check:618736570337591296> Ус амжилттай авагдлаа`);
+        .setDescription(`✅ Ус амжилттай авагдлаа`);
 
         client.db.subtract(`money_${user.id}`, 3500)
         message.channel.send(Embed3)
@@ -51,14 +51,14 @@ exports.execute = async (client, message, args) => {
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Check:618736570337591296> Чи `);
+        .setDescription(`✅ Чи шинэ машинтай боллоо`);
 
         client.db.subtract(`money_${user.id}`, 50000000)
         message.channel.send(Embed3)
     } else if(args[0] == 'iphonex') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Cross:618736602901905418> You need 3000000 coins to purchase a Mansion`);
+        .setDescription(`<:x:618736602901905418> чи 3000000 төгрөгөөр утас авах боломжтой`);
 
         if (author < 3000000) return message.channel.send(Embed2)
        
@@ -67,14 +67,14 @@ exports.execute = async (client, message, args) => {
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`<:Check:618736570337591296> Purchased a Iphone X For 3000000 Coins`);
+        .setDescription(`✅ I phone X амжилттай авагдлаа`);
 
         client.db.subtract(`money_${user.id}`, 3000000)
         message.channel.send(Embed3)
     } else {
         let embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription('<:Cross:618736602901905418> Enter an item to buy')
+        .setDescription('<:x:618736602901905418> ямар бараа авахаа оруулна уу')
         message.channel.send(embed3)
     }
 
