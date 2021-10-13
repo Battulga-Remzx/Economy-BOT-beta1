@@ -8,12 +8,6 @@ exports.execute = async (client, message, args) => {
   await client.eco.transfer(message.author.id, member.id, amount) 
   return message.channel.send(`Шилжүүлэгэ амжилттай боллоо 💸**${amount}** ыг ** ${member.user.tag}**-руу.`)
 
-  let member1 = client.db.fetch(`money_${member.id}`)
-  let member2 = client.db.fetch(`bank_${member.id}`)
-  
-  
-
-
 }
 
 exports.help = {
