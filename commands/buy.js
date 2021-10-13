@@ -8,19 +8,19 @@ exports.execute = async (client, message, args) => {
 
     let Embed = new MessageEmbed()
     .setColor("#FFFFFF")
-    .setDescription(`<:x:618736602901905418> Чи 10000 төгрөгөөр хоол авах боломжтой `);
+    .setDescription(`<:x:618736602901905418> Чи 500000 төгрөгөөр VIP Rank авах боломжтой `);
 
-    if (args[0] == 'hool') {
+    if (args[0] == 'vip') {
         if (author < 10000) return message.channel.send(Embed)
         
-        client.db.fetch(`hool_${user.id}`);
-        client.db.set(`hool_${user.id}`, true)
+        client.db.fetch(`vip_${user.id}`);
+        client.db.set(`vip_${user.id}`, true)
 
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(`✅ 10000төгрөгөөр амжилттай хоол авагдлаа`);
+        .setDescription(`✅ 500000 төгрөгөөр амжилттай VIP авагдлаа`);
 
-        client.db.subtract(`money_${user.id}`, 10000)
+        client.db.subtract(`money_${user.id}`, 500000)
         message.channel.send(Embed2)
     } else if(args[0] == 'us') {
         let Embed2 = new MessageEmbed()

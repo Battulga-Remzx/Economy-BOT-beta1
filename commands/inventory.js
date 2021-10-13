@@ -4,22 +4,23 @@ exports.execute = async (client, message, args ) => {
 
   let user = message.mentions.users.first() || message.author;
   
-  let vip = await client.db.fetch(`hool_${user.id}`)
+  let vip = await client.db.fetch(`vip_${user.id}`)
     if(vip === null) vip = 'None'
-    if(vip === true) vip = 'Bronze'
+    if(vip === true) vip = 'Very Carry'
 
-  let shoes = await client.db.fetch(`us_${user.id}`)
+  let shoes = await client.db.fetch(`vip_${user.id}`)
   if(shoes === null) shoes = '0'
 
   let newcar = await client.db.fetch(`car_${user.id}`)
   if(newcar === null) newcar = '0'
 
-  let newhouse = await client.db.fetch(`phone_${message.guild.id}_${user.id}`)
+  let newhouse = await client.db.fetch(`phone_${user.id}`)
   if(newhouse === null) newhouse = '0'
 
   let moneyEmbed = new MessageEmbed()
+  .setTitle(`**${user}'s inventory**`)
   .setColor("#FFFFFF")
-  .setDescription(`**${user}'s Profile**\n\nVIP Rank: ${vip}\n\n**Inventory**\n\nNikes: ${shoes}\nCars: ${newcar}\nMansions: ${newhouse}`);
+  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${shoes}\nМашын: ${newcar}\nI phone X: ${newhouse}`);
   message.channel.send(moneyEmbed)
 };
 exports.help = {
