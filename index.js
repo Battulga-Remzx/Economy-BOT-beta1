@@ -46,11 +46,6 @@ client.home = {
     cost: 7000000
   }
 };
-client.sellitem = {
-  icecream: {
-    sell: 2000
-  }
-};
 
 const fs = require("fs");
 
