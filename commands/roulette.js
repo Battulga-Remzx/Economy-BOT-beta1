@@ -17,19 +17,19 @@ exports.execute = async (client, message, args) => {
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:Cross:618736602901905418> Specify an amount to gamble | m!roulette <color> <amount>`
+      `<:x:618736602901905418> Specify an amount to gamble | ~roulette <red, green, black <amount>`
     );
 
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:Cross:618736602901905418> You are betting more than you have`
+      `<:x:618736602901905418> You are betting more than you have`
     );
 
   let colorbad = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:Cross:618736602901905418> Specify a color | Red [1.5x] Black [2x] Green [15x]`
+      `<:x:618736602901905418> Specify a color | Red [1.5x] Black [2x] Green [15x]`
     );
 
   if (!colour) return message.channel.send(colorbad);
@@ -49,7 +49,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed1 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Green:618767721361833995> You won ${money} coins\n\nMultiplier: 15x`
+        `<:check:618767721361833995> You won ${money} coins\n\nMultiplier: 15x`
       );
     message.channel.send(moneyEmbed1);
     console.log(`${message.author.tag} Won ${money} on green`);
@@ -60,7 +60,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed2 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Red:618767705444450342> You won ${money} coins\n\nMultiplier: 1.5x`
+        `<:check:618767705444450342> You won ${money} coins\n\nMultiplier: 1.5x`
       );
     message.channel.send(moneyEmbed2);
   } else if (!isOdd(random) && colour == 0) {
@@ -70,7 +70,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Black:618767682996666408> You won ${money} coins\n\nMultiplier: 2x`
+        `<:check:618767682996666408> You won ${money} coins\n\nMultiplier: 2x`
       );
     message.channel.send(moneyEmbed3);
   } else {
@@ -79,7 +79,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed4 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Cross:618736602901905418> You lost ${money} coins\n\nMultiplier: 0x`
+        `<:x:618736602901905418> You lost ${money} coins\n\nMultiplier: 0x`
       );
     message.channel.send(moneyEmbed4);
   }
