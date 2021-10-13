@@ -17,13 +17,14 @@ exports.execute = async (client, message, args) => {
   let moneyhelp = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(
-      `<:x:618736602901905418> өнгө болон бооцоогоо оруулна уу! | ~roulette [red, green, black] <мөнгө>`
+      `<:x:618736602901905418> өнгө болон бооцоогоо оруулна уу! | \n ~roulette [red, green, black] <мөнгө>`
     );
 
   let moneymore = new MessageEmbed()
-    .setColor("#FFFFFF")
+    .setTitle(`<:x:618736602901905418> Алдаа гарлаа`)
+  .setColor("#FFFFFF")
     .setDescription(
-      `<:x:618736602901905418> You are betting more than you have`
+      `<:x:618736602901905418> <@${user.id}> таний мөнгө хүрэхгүй байна`
     );
 
   let colorbad = new MessageEmbed()
@@ -33,10 +34,11 @@ exports.execute = async (client, message, args) => {
     );
 
   let moneybug = new MessageEmbed()
+    .setTitle(`<@${user.id}>`)
   .setColor("#FFFFFF")
-  .setDescription(`<:x:618736602901905418> урвуу тоо оруулах боломжгүй`);
-  
-  if (money < 0 ) return message.channel.sned(moneybug)
+    .setDescription(`<:x:618736602901905418> урвуу тоо оруулах боломжгүй`);
+
+  if (money < 0) return message.channel.send(moneybug);
   if (!colour) return message.channel.send(colorbad);
   colour = colour.toLowerCase();
   if (!money) return message.channel.send(moneyhelp);
@@ -54,7 +56,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed1 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<@${user.id}> GREEN буулаа баяр хүргэе ${money} хожлоо\n\n ихэсгэж авсан : 15x`
+        `<@${user.id}> GREEN буулаа баяр хүргэе ${money} төгрөг хожлоо\n\n ихэсгэж авсан : 15x`
       );
     message.channel.send(moneyEmbed1);
     console.log(`${message.author.tag} Won ${money} on green`);
@@ -65,7 +67,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed2 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<@${user.id}> RED буулаа баяр хүргэе  ${money} хожлоо\n\n ихжсгэж авсан : 1.5x`
+        `<@${user.id}> RED буулаа баяр хүргэе  ${money} төгрөг хожлоо\n\n ихжсгэж авсан : 1.5x`
       );
     message.channel.send(moneyEmbed2);
   } else if (!isOdd(random) && colour == 0) {
@@ -75,7 +77,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<@${user.id}> BLACK буулаа баяр хүргэе  ${money} coins\n\n ихэсгэж авсан : 2x`
+        `<@${user.id}> BLACK буулаа баяр хүргэе  ${money} төгрөг хожлоо \n\n ихэсгэж авсан : 2x`
       );
     message.channel.send(moneyEmbed3);
   } else {
