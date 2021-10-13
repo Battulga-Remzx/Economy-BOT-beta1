@@ -21,14 +21,14 @@ module.exports.execute = async (client, message, args) => {
     let embed5 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Check:618736570337591296> You have deposited all your coins into your bank`
+        `<:check:618736570337591296> You have deposited all your coins into your bank`
       );
     message.channel.send(embed5);
   } else {
     let embed2 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Cross:618736602901905418> Specify an amount to deposit`
+        `<:x:618736602901905418> дансруу хэдийг хийхээ оруулна уу!`
       );
 
     if (!args[0]) {
@@ -37,7 +37,7 @@ module.exports.execute = async (client, message, args) => {
     let embed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Cross:618736602901905418> You can't deposit negative money`
+        `<:x:618736602901905418> Урвуу мөнгө оруулах боломжгүй`
       );
 
     if (message.content.includes("-")) {
@@ -46,7 +46,7 @@ module.exports.execute = async (client, message, args) => {
     let embed4 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:Cross:618736602901905418> You don't have that much money`
+        `<:x:618736602901905418> Мөнгө чинь хүрэхгүй байна`
       );
 
     if (member < args[0]) {
@@ -54,7 +54,7 @@ module.exports.execute = async (client, message, args) => {
     }
     let embed5 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`<:Check:618736570337591296> You have deposited ${args[0]} coins into your bank`);
+  .setDescription(`<:Check:618736570337591296> чи амжилттай  ${args[0]} төгрөгийг дансруу оруллаа`);
 
   message.channel.send(embed5)
   client.db.add(`bank_${author.id}`, args[0])
@@ -62,4 +62,8 @@ module.exports.execute = async (client, message, args) => {
   }
 };
 
-
+exports.help = {
+  name: "---------------Данс & Бэлэн мөнгө------",
+  aliases: ['dep', 'deposit', ],
+  usage: `dep <bank or money> <amount>`
+};
