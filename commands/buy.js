@@ -11,6 +11,7 @@ exports.execute = async (client, message, args) => {
   if (!isBalanceEnough) return message.reply("Таний дансан дахь үлдэгдэл хүрэлцэхгүй байна "+hasItem.cost+" төгрөгөөр энэ барааг авч болно.");
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
   
+  
   let itemStruct = {
     name: item.toLowerCase(),
     prize: hasItem.cost
