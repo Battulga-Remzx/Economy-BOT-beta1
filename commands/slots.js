@@ -22,10 +22,14 @@ exports.execute = async (client, message, args) => {
     .setColor("#FFFFFF")
     .setDescription(`<a:x:737764891657633814> Бооцооны мөнгөө тавьна уу`);
 
-  let bugmoney = new 
+  let bugmoney = new MessageEmbed()
+  .setColor("#000000")
+  .setDescription(`<a:x:737764891657633814> Урвуу мөнгө оруулхыг хориглоно!!`);
+  
   if (!money) return message.channel.send(moneyhelp);
   if (money > moneydb) return message.channel.send(moneymore);
-
+if (0 > money) return message.channel.send(bugmoney);
+  
   let number = [];
   for (let i = 0; i < 3; i++) {
     number[i] = Math.floor(Math.random() * slotItems.length);
