@@ -1,25 +1,29 @@
 const { MessageEmbed } = require("discord.js")
-exports.execute = async (client, message, args) => {
 
-  const embed = new MessageEmbed()
-    .setAuthor(`Тоглогчын цунхэн дотор ${message.author.tag}`, message.guild.iconURL)
-    .setColor("RANDOM")
-    .setThumbnail()
-    .setTimestamp();
-  const x = client.db.get(`items_${message.author.id}`);
-if(!x) { return message.channel.send(`ямар ч бараа байхгүй байна`); }
-const arrayToObject = x.reduce((itemsobj, x) => {
-    itemsobj[x.name] = (itemsobj[x.name] || 0) + 1;
-    return itemsobj;
-}, {});
+exports.execute = async (client, message, args ) => {
 
-  const result = Object.keys(arrayToObject).map(k => embed.addField(`Барааны нэр: ${k}`,`ширхэг: **${arrayToObject[k]}**`, false));
+  let user = message.mentions.users.first() || message.author;
   
- 
-  return message.channel.send(embed);
-}
+  let vip = await client.db.fetch(`hool_${user.id}`)
+    if(vip === null) vip = 'None'
+    if(vip === true) vip = 'Bronze'
+
+  let shoes = await client.db.fetch(`us_${user.id}`)
+  if(shoes === null) shoes = '0'
+
+  let newcar = await client.db.fetch(`car_${user.id}`)
+  if(newcar === null) newcar = '0'
+
+  let newhouse = await client.db.fetch(`phone_${message.guild.id}_${user.id}`)
+  if(newhouse === null) newhouse = '0'
+
+  let moneyEmbed = new MessageEmbed()
+  .setColor("#FFFFFF")
+  .setDescription(`**${user}'s Profile**\n\nVIP Rank: ${vip}\n\n**Inventory**\n\nNikes: ${shoes}\nCars: ${newcar}\nMansions: ${newhouse}`);
+  message.channel.send(moneyEmbed)
+};
 exports.help = {
-  name: "---------------Танд байгаа бараанууд",
+  name: "---------------Цүнх--------",
   aliases: ["inv"],
-  usage: `inv`
-}
+  usage: "inv"
+};

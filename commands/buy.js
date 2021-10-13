@@ -62,8 +62,8 @@ exports.execute = async (client, message, args) => {
 
         if (author < 3000000) return message.channel.send(Embed2)
        
-        client.db.fetch(`house_${user.id}`)
-        client.db.add(`house_${user.id}`, 1)
+        client.db.fetch(`phone_${user.id}`)
+        client.db.add(`phone_${user.id}`, 1)
 
         let Embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
