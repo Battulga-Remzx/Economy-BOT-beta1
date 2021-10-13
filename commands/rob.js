@@ -35,7 +35,7 @@ if (author !== null && timeout - (Date.now() - author) > 0) {
     );
   }
 
-  let random = Math.floor(Math.random() * 500-1) + 1; // random number 200-1, you can change 200 to whatever you'd like
+  let random = Math.floor(Math.random() * 500) + 1; // random number 200-1, you can change 200 to whatever you'd like
 
   let embed = new MessageEmbed()
     .setDescription(

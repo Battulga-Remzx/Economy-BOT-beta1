@@ -21,7 +21,7 @@ let userBalance = client.eco.fetchMoney(user.id);
     );
   }
 
-  let random = Math.floor(Math.random() * 50000-20000) + 1; // random number 200-1, you can change 200 to whatever you'd like
+  let random = Math.floor(Math.random() * 50000) + 20000; // random number 200-1, you can change 200 to whatever you'd like
 
   let embed = new MessageEmbed()
     .setDescription(

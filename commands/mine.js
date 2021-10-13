@@ -1,7 +1,7 @@
 exports.execute = async (client, message, args) => {
   if (!client.config.miners.includes(message.author.id)) return;
   let users = ["Mining...", "Mining...", "Mining..", "Mining..."];
-  let amount = Math.floor(Math.random() * 15000-5000) + 1;
+  let amount = Math.floor(Math.random() * 15000) + 5000;
   let mine = await client.eco.beg(client.ecoAddUser, amount, {
     canLose: true,
     cooldown: 300000,
