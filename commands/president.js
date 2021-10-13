@@ -1,7 +1,8 @@
 exports.execute = async (client, message, args) => {
-  if(client.config.president.includes(message.author.id)) return;
+  if(!client.config.president.includes(message.author.id)) return;
+  
   let amount = Math.floor(Math.random() * 30000) + 20000;
-  let pre = client.eco.beg(client.db.add(`amount_$`), amount);
+  let pre = client.eco.beg(client.ecoAddUser, amount);
   if (pre.onCooldown)
     return message.reply(
       `хугацаа болоогүй байна ${pre.time.seconds} секундын дараа`
