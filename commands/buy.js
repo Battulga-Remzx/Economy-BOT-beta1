@@ -15,9 +15,6 @@ exports.execute = async (client, message, args) => {
     name: item.toLowerCase(),
     prize: hasItem.cost
   }
-  let itemSubtract = {
-name: item.toLowerCase().
-}
   
   
   client.db.push(`items_${message.author.id}`, itemStruct);
