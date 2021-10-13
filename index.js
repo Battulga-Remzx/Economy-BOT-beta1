@@ -10,10 +10,10 @@ client.aliases = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 //Дэлгүүр
 client.shop = {
-  icecream: {
+  zairmag: {
     cost: 3000
   },
-  water: {
+  us: {
     cost: 5000
   },
   hool: {
@@ -22,8 +22,8 @@ client.shop = {
   laptop: {
     cost: 1000000
   },
-  samsungs9: {
-    cost: 800000
+  samsungs20: {
+    cost: 1000000
   },
   pc: {
     cost: 600000
