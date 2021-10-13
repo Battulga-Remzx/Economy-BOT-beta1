@@ -32,6 +32,11 @@ exports.execute = async (client, message, args) => {
       `<:x:618736602901905418> өнгөө сонгоно уу!| Red [1.5x] Black [2x] Green [15x]`
     );
 
+  let moneybug = new MessageEmbed()
+  .setColor("#FFFFFF")
+  .setDescription(`<:x:618736602901905418> урвуу тоо оруулах боломжгүй`);
+  
+  if (money < 0 ) return message.channel.sned(moneybug)
   if (!colour) return message.channel.send(colorbad);
   colour = colour.toLowerCase();
   if (!money) return message.channel.send(moneyhelp);
@@ -49,7 +54,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed1 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `<:check:618767721361833995> You won ${money} coins\n\nMultiplier: 15x`
+        `<@${user.id}> GREEN буулаа баяр хүргэе ${money} хожлоо\n\n ихэсгэж авсан : 15x`
       );
     message.channel.send(moneyEmbed1);
     console.log(`${message.author.tag} Won ${money} on green`);
@@ -60,7 +65,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed2 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `RED буулаа баяр х${money} coins\n\nMultiplier: 1.5x`
+        `<@${user.id}> RED буулаа баяр хүргэе  ${money} хожлоо\n\n ихжсгэж авсан : 1.5x`
       );
     message.channel.send(moneyEmbed2);
   } else if (!isOdd(random) && colour == 0) {
@@ -70,7 +75,7 @@ exports.execute = async (client, message, args) => {
     let moneyEmbed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `BLACK буулаа баяр хүргэе ${message.user.id} ${money} coins\n\nMultiplier: 2x`
+        `<@${user.id}> BLACK буулаа баяр хүргэе  ${money} coins\n\n ихэсгэж авсан : 2x`
       );
     message.channel.send(moneyEmbed3);
   } else {
