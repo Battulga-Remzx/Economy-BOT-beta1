@@ -12,7 +12,7 @@ exports.execute = async (client, message, args) => {
   let timeout = 600000;
 
 if (author !== null && timeout - (Date.now() - author) > 0) {
-    let time = client.cooldown(timeout - (Date.now() - author));
+    let time = client.cooldowns(timeout - (Date.now() - author));
 
     let timeEmbed = new MessageEmbed()
     .setColor("#FFFFFF")
