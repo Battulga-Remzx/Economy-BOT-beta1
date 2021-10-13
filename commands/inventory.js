@@ -12,8 +12,7 @@ const arrayToObject = x.reduce((itemsobj, x) => {
     itemsobj[x.name] = (itemsobj[x.name] || 0) + 1;
     return itemsobj;
 }, {});
-const y = client.db.remove(`items_${message.author.id}`);
-  
+
   const result = Object.keys(arrayToObject).map(k => embed.addField(`Барааны нэр: ${k}`,`ширхэг: **${arrayToObject[k]}**`, false));
   
  
