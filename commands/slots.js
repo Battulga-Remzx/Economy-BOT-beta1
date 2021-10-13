@@ -64,9 +64,8 @@ if (0 > money) return message.channel.send(bugmoney);
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
-        }\n\nЧи ${money} төгрөг алдлаа`
+        }\n\n<@${author.id}> ${money} төгрөг алдлаа`
       )
-    .addField(`<@${author.id}>`)
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
