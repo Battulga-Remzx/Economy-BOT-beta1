@@ -8,6 +8,9 @@ exports.execute = async (client, message, args ) => {
     if(vip === null) vip = 'None'
     if(vip === true) vip = 'Very Carry'
 
+ let hool = await client.db.fetch(`food_${user.id}`)
+if(hool === null) hool = '0'
+  
   let shoes = await client.db.fetch(`us_${user.id}`)
   if(shoes === null) shoes = '0'
 
@@ -20,7 +23,7 @@ exports.execute = async (client, message, args ) => {
   let moneyEmbed = new MessageEmbed()
   .setTitle(`**${user}'s inventory**`)
   .setColor("#FFFFFF")
-  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${shoes}\nХоол: $\nМашын: ${newcar}\nI phone X: ${newhouse}`);
+  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${shoes}\nХоол: ${hool} \nМашын: ${newcar}\nI phone X: ${newhouse}`);
   message.channel.send(moneyEmbed)
 };
 exports.help = {

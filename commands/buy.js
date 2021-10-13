@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
 
         client.db.subtract(`money_${user.id}`, 500000)
         message.channel.send(Embed2)
-    } else if(args[0] == 'us') {
+    } else if(args[0] == 'water') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:x:618736602901905418> чи 3500 төгрөгөөр ус авах боломжтой`);
@@ -38,15 +38,15 @@ exports.execute = async (client, message, args) => {
 
         client.db.subtract(`money_${user.id}`, 3500)
         message.channel.send(Embed3)
-    } else if(args[0] == 'hool') {
+    } else if(args[0] == 'food') {
         let EmbeD2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:x:618736602901905418> чи 10000 төгрөгөөр хоол авах боломжтой`);
 
         if (author < 10000) return message.channel.send(EmbeD2)
        
-        client.db.fetch(`hool_${user.id}`)
-        client.db.add(`hool_${user.id}`, 1)
+        client.db.fetch(`food_${user.id}`)
+        client.db.add(`food_${user.id}`, 1)
 
         let EmbeD3 = new MessageEmbed()
         .setColor("#FFFFFF")
