@@ -16,28 +16,28 @@ exports.execute = async (client, message, args) => {
 
   let moneyhelp = new MessageEmbed()
     .setTitle(`<@${user.id}>`)
-  .setColor("#FFFFFF")
+    .setColor("#FFFFFF")
     .setDescription(
       `<:x:618736602901905418> өнгө болон бооцоогоо оруулна уу! | \n [GREEN, RED, BLACK] [мөнгө]`
     );
 
   let moneymore = new MessageEmbed()
     .setTitle(`<:x:618736602901905418> Алдаа гарлаа`)
-  .setColor("#FFFFFF")
+    .setColor("#FFFFFF")
     .setDescription(
       `<:x:618736602901905418> <@${user.id}> таний мөнгө хүрэхгүй байна`
     );
 
   let colorbad = new MessageEmbed()
     .setTitle(`<@${user.id}>`)
-  .setColor("#FFFFFF")
+    .setColor("#FFFFFF")
     .setDescription(
       `<:x:618736602901905418> өнгөө сонгоно уу!| \n\n Red [1.5x] Black [2x] Green [15x]`
     );
 
   let moneybug = new MessageEmbed()
     .setTitle(`<@${user.id}>`)
-  .setColor("#FFFFFF")
+    .setColor("#FFFFFF")
     .setDescription(`<:x:618736602901905418> урвуу тоо оруулах боломжгүй`);
 
   if (money < 0) return message.channel.send(moneybug);
@@ -54,10 +54,10 @@ exports.execute = async (client, message, args) => {
   if (random == 0 && colour == 2) {
     // Green
     money *= 15;
-    client.db.fetch(`money_${message.author.id}`, money);
+    await client.db.add(`money_${message.author.id}`, money);
     let moneyEmbed1 = new MessageEmbed()
       .setTitle(`<@${user.id}>`)
-    .setColor("#FFFFFF")
+      .setColor("#FFFFFF")
       .setDescription(
         `GREEN буулаа баяр хүргэе ${money} төгрөг хожлоо\n\n ихэсгэж авсан : 15x`
       );
@@ -66,10 +66,10 @@ exports.execute = async (client, message, args) => {
   } else if (isOdd(random) && colour == 1) {
     // Red
     money = parseInt(money * 1.5);
-    client.db.fetch(`money_${message.author.id}`, money);
+    await client.db.add(`money_${message.author.id}`, money);
     let moneyEmbed2 = new MessageEmbed()
       .setTitle(`<@${user.id}>`)
-    .setColor("#FFFFFF")
+      .setColor("#FFFFFF")
       .setDescription(
         `RED буулаа баяр хүргэе  ${money} төгрөг хожлоо\n\n ихэсгэж авсан : 1.5x`
       );
@@ -77,20 +77,20 @@ exports.execute = async (client, message, args) => {
   } else if (!isOdd(random) && colour == 0) {
     // Black
     money = parseInt(money * 2);
-    client.db.fetch(`money_${message.author.id}`, money);
+    await client.db.add(`money_${message.author.id}`, money);
     let moneyEmbed3 = new MessageEmbed()
-     .setTitle(`<@${user.id}>`)
-    .setColor("#FFFFFF")
+      .setTitle(`<@${user.id}>`)
+      .setColor("#FFFFFF")
       .setDescription(
         `BLACK буулаа баяр хүргэе  ${money} төгрөг хожлоо \n\n ихэсгэж авсан : 2x`
       );
     message.channel.send(moneyEmbed3);
   } else {
     // Wrong
-    client.db.fetch(`money_${message.author.id}`, money);
+    await client.db.subtract(`money_${message.author.id}`, money);
     let moneyEmbed4 = new MessageEmbed()
       .setTitle(`<@${user.id}>`)
-    .setColor("#FFFFFF")
+      .setColor("#FFFFFF")
       .setDescription(
         `<:x:618736602901905418>  ${money} төгрөг алдлаа \n\nMultiplier: 0x`
       );
