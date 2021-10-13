@@ -13,7 +13,7 @@ exports.execute = async (client, message, args) => {
   let author = message.author;
   var money = parseInt(args[0]);
   let win = false;
-
+  
   let moneymore = new MessageEmbed()
     .setColor("#FFFFFF")
     .setDescription(`<a:x:737764891657633814> таний мөнгө хүрэхгүй байна`);
@@ -52,7 +52,7 @@ if (0 > money) return message.channel.send(bugmoney);
       .setDescription(
         `${slotItems[number[0]]} | ${slotItems[number[1]]} | ${
           slotItems[number[2]]
-        }\n\nЧи ${money} төгрөг хожлоо`
+        }\n\n<@${author.id}> ${money} төгрөг хожлоо`
       )
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
@@ -66,6 +66,7 @@ if (0 > money) return message.channel.send(bugmoney);
           slotItems[number[2]]
         }\n\nЧи ${money} төгрөг алдлаа`
       )
+    .addField(`<@${author.id}>`)
       .setFooter("Remzx official ECONOMY server")
       .setColor("#FFFFFF");
     message.channel.send(slotsEmbed);
