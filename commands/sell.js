@@ -1,10 +1,12 @@
 const { MessageEmbed } = require("discord.js");
-
-
-  exports.execute = (client, message , args) => {
-  let itemStruct = {
+  const x = client.db.get(`items_${message.author.id}`);
+exports.execute = (client, message , args) => {
+ let author = message.author;
+  let sellItem =  
+      
+    let itemStruct {
     name: item.toLowerCase(),
-    prize: hasItem.cost
+    prize: sellItem.scost
   }
   
   
