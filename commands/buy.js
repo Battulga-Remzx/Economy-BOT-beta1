@@ -38,6 +38,22 @@ exports.execute = async (client, message, args) => {
 
         client.db.subtract(`money_${user.id}`, 3500)
         message.channel.send(Embed3)
+    } else if(args[0] == 'hool') {
+        let EmbeD2 = new MessageEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(`<:x:618736602901905418> чи 10000 төгрөгөөр хоол авах боломжтой`);
+
+        if (author < 10000) return message.channel.send(EmbeD2)
+       
+        client.db.fetch(`hool_${user.id}`)
+        client.db.add(`hool_${user.id}`, 1)
+
+        let EmbeD3 = new MessageEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(`✅ Хоол амжилттай авагдлаа`);
+
+        client.db.subtract(`money_${user.id}`, 10000)
+        message.channel.send(EmbeD3)
     } else if(args[0] == 'car') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
@@ -55,7 +71,7 @@ exports.execute = async (client, message, args) => {
 
         client.db.subtract(`money_${user.id}`, 50000000)
         message.channel.send(Embed3)
-    } else if(args[0] == 'iphonex') {
+    } else if(args[0] == 'phone') {
         let Embed2 = new MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(`<:x:618736602901905418> чи 3000000 төгрөгөөр утас авах боломжтой`);
