@@ -20,10 +20,13 @@ if(hool === null) hool = '0'
   let phone = await client.db.fetch(`phone_${user.id}`)
   if(phone === null) phone = '0'
 
+  let rolexwatch = await client.db.fetch(`rolexwatch_${user.id}`)
+  if(rolexwatch === null) rolexwatch = '0'
+ 
   let moneyEmbed = new MessageEmbed()
   .setTitle(`**${user}'s inventory**`)
   .setColor("#FFFFFF")
-  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${water}\nХоол: ${hool} \nМашин: ${newcar}\nУтас: ${phone}`);
+  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${water}\nХоол: ${hool} \nМашин: ${newcar}\nУтас: ${phone}\n`);
   message.channel.send(moneyEmbed)
 };
 exports.help = {

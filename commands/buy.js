@@ -102,7 +102,7 @@ exports.execute = async (client, message, args) => {
         `<:x:618736602901905418> чи 30,000,000 төгрөгөөр RolexWatch авах боломжтой`
       );
 
-    if (author < 30000000) return message.channel.send(Embed4);
+    if (author < 30000000) return message.channel.send(Embed5);
 
     client.db.fetch(`rolexwatch_${user.id}`);
     client.db.add(`rolexwatch_${user.id}`, 1);
@@ -112,11 +112,11 @@ exports.execute = async (client, message, args) => {
       .setDescription(`✅ RolexWatch амжилттай авагдлаа`);
     client.db.subtract(`money_${user.id}`, 30000000);
     message.channel.send(Embed4);
-
+  } else {
     let embed3 = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        "✅ хоол хүнс болон бараанууд:\n Хоол: food\nҮнэ: 10,000\n\nУс: water\nҮнэ: 3,500\n\nМашин: car\nҮнэ: 50,000,000\n\nУтас: phone\nҮнэ: 3,000,000"
+        "✅ хоол хүнс болон бараанууд:\n Хоол: food\nҮнэ: 10,000\n\nУс: water\nҮнэ: 3,500\n\nМашин: car\nҮнэ: 50,000,000\n\nУтас: phone\nҮнэ: 3,000,000\n\nRolex цаг: RolexWatch\nҮнэ:30,000,000"
       );
     message.channel.send(embed3);
   }
