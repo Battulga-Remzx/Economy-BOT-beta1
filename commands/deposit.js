@@ -63,7 +63,7 @@ module.exports.execute = async (client, message, args) => {
 };
 
 exports.help = {
-  name: "---------------Данс & Бэлэн мөнгө------",
+  name: "---------------Бэлэн мөнгө => Данс------",
   aliases: ['dep', 'deposit', ],
   usage: `dep <bank or money> <amount>`
 };
