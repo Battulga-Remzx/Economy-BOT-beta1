@@ -8,45 +8,7 @@ client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
-//Дэлгүүр
-client.shop = {
-  zairmag: {
-    cost: 3000,
-    scost: -2000
-  },
-  us: {
-    cost: 5000
-  },
-  hool: {
-    cost: 10000
-  },
-  laptop: {
-    cost: 1000000
-  },
-  samsungs20: {
-    cost: 1000000
-  },
-  pc: {
-    cost: 600000
-  },
-  iphonex: {
-    cost: 1500000
-  },
-  prius20: {
-    cost: 3000000
-  },
-  ferrari: {
-    cost: 20000000
-  }
-};
-client.home = {
-  mongol_ger: {
-    cost: 1000000
-  },
-  house: {
-    cost: 7000000
-  }
-};
+
 
 const fs = require("fs");
 

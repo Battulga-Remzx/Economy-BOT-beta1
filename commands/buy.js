@@ -90,14 +90,14 @@ exports.execute = async (client, message, args) => {
     } else {
         let embed3 = new MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription('<:x:618736602901905418> ямар бараа авахаа оруулна уу')
+        .setDescription('✅ хоол хүнс болон бараанууд:\n Хоол: food\nҮнэ: 10,000\n\nУс: water\nҮнэ: 3,500\n\nМашин: car\nҮнэ: 50,000,000\n\nУтас: phone\nҮнэ: 3,000,000')
         message.channel.send(embed3)
     }
 
 }
   
 exports.help = {
-  name: "---------------Юм худалдаж авах----------",
+  name: "---------------Юм худалдаж авах----",
   aliases: ["buy"], 
   usage: `buy <item>`
 };
