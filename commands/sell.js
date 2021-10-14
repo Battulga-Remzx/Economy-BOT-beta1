@@ -9,9 +9,9 @@ exports.execute = async (client, message, args) => {
         .setColor("#FFFFFF")
         .setDescription(`<:x:618736602901905418> чамд идэх хоол байхгүй байна`);
 
-        let nikeses = await client.db.fetch(`food_${user.id}`)
+        let foods = await client.db.fetch(`food_${user.id}`)
 
-        if (nikeses < 1) return message.channel.send(Embed2)
+        if (foods < 1) return message.channel.send(Embed2)
        
         client.db.fetch(`food_${user.id}`)
         client.db.subtract(`food_${user.id}`, 1)
