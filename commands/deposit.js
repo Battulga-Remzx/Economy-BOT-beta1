@@ -54,7 +54,7 @@ module.exports.execute = async (client, message, args) => {
     }
     let embed5 = new MessageEmbed()
   .setColor("#FFFFFF")
-  .setDescription(`✅ чи амжилттай  ${args[0]} төгрөгийг дансруу оруллаа`);
+  .setDescription(`✅ амжилттай  ${args[0]} төгрөгийг дансруу хийлээ`);
 
   message.channel.send(embed5)
   client.db.add(`bank_${author.id}`, args[0])
