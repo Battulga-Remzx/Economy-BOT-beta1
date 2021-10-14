@@ -11,19 +11,19 @@ exports.execute = async (client, message, args ) => {
  let hool = await client.db.fetch(`food_${user.id}`)
 if(hool === null) hool = '0'
   
-  let shoes = await client.db.fetch(`us_${user.id}`)
-  if(shoes === null) shoes = '0'
+  let water = await client.db.fetch(`us_${user.id}`)
+  if(water === null) water = '0'
 
   let newcar = await client.db.fetch(`car_${user.id}`)
   if(newcar === null) newcar = '0'
 
-  let newhouse = await client.db.fetch(`phone_${user.id}`)
-  if(newhouse === null) newhouse = '0'
+  let phone = await client.db.fetch(`phone_${user.id}`)
+  if(phone === null) phone = '0'
 
   let moneyEmbed = new MessageEmbed()
   .setTitle(`**${user}'s inventory**`)
   .setColor("#FFFFFF")
-  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${shoes}\nХоол: ${hool} \nМашын: ${newcar}\nI phone X: ${newhouse}`);
+  .setDescription(`\n\nVIP RANK: ${vip}\n\n**Items**\n\nУс: ${water}\nХоол: ${hool} \nМашын: ${newcar}\nУтас: ${phone}`);
   message.channel.send(moneyEmbed)
 };
 exports.help = {
