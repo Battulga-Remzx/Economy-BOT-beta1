@@ -5,16 +5,16 @@ exports.execute = async (client, message, args) => {
   if (bank === null) bank = 0;
   let user = message.mentions.users.first() || message.author;
   let userBalance = client.eco.fetchMoney(user.id);
-
+  let userBank = client.db.fetch(`bank_${message.author.id}`);
   const embed = new MessageEmbed()
     .setTitle(`Данс шалгаж байна`)
     .addField(`Хэрэглэгчийн нэр`, `<@${userBalance.user}>`)
-    .setImage()
-  .addField(`Мөнгө`, `${userBalance.amount} 💸байна`)
+    .addField(`Мөнгө`, `${userBalance.amount} 💸байна`)
     .addField(`Данс`, `${bank} 💸байна`)
     .addField(`Leaderboard Rank`, `Top ${userBalance.position} -т жигсаж байна`)
+    .addField(`Bank Rank`, `Top ${userBank.position} т жигсаж байна`)
     .setColor("RANDOM")
-    .setThumbnail(user.displayAvatarURL)
+    .setImage(user.displayAvatarURL)
     .setTimestamp();
   return message.channel.send(embed);
 };
