@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
    
-    let leaderboard = client.eco.leaderboard({ limit: 15, raw: false });
+    let leaderboard = client.eco.leaderboard({ limit: 5, raw: false });
     if (!leaderboard || leaderboard.length < 1) return message.channel.send("❌ | Empty Leaderboard!");
     const embed = new MessageEmbed()
         .setAuthor(`Leaderboard of ${message.guild.name}!`, message.guild.iconURL)

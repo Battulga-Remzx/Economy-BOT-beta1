@@ -12,7 +12,6 @@ exports.execute = async (client, message, args) => {
     .addField(`Мөнгө`, `${userBalance.amount} 💸байна`)
     .addField(`Данс`, `${bank} 💸байна`)
     .addField(`Leaderboard Rank`, `Top ${userBalance.position} -т жигсаж байна`)
-    .addField(`Bank Rank`, `Top ${userBank.position} т жигсаж байна`)
     .setColor("RANDOM")
     .setImage(user.displayAvatarURL)
     .setTimestamp();
