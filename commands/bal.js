@@ -10,7 +10,7 @@ exports.execute = async (client, message, args) => {
     .setTitle(`Данс шалгаж байна`)
     .addField(`Хэрэглэгчийн нэр`, `<@${userBalance.user}>`)
     .addField(`Мөнгө`, `${userBalance.amount} 💸байна`)
-    .addField(`Данс`, `${bank} 💸байна`)
+    .addField(`Данс`, `${user.bank} 💸байна`)
     .addField(`Leaderboard Rank`, `Top ${userBalance.position} -т жигсаж байна`)
     .setColor("RANDOM")
     .setImage(user.displayAvatarURL)
